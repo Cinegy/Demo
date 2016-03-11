@@ -1,0 +1,359 @@
+<Titler Width="1920" CX="16" Height="1080" CY="9" Duration="120" SavedTVFormat="5" Name="Demo 1 - Integration via File" TVFormatName="1080i/25" FrameRate="25" TVFormat="5" Version="V1.1">
+	<Public>
+		<RootFolder Path="C:\Work\Michael\Dropbox\Work\Documents\Presentations\Cinegy Tech Conference Munich 2016\DEMO Materials\Demo 1 - Integration via File"/>
+		<Objects>
+			<Font PATH="C:/windows/fonts/arial.ttf" GUID="GUID" NAME="Arial" STYLE="Regular"/>
+			<File NAME="C:\Work\Michael\Dropbox\Work\Documents\Presentations\Cinegy Tech Conference Munich 2016\DEMO Materials\Demo 1 - Integration via File\MyText.txt"/>
+		</Objects>
+		<Variables>
+			<File ID="100418" NAME="TextFile" VALUE="C:\Work\Michael\Dropbox\Work\Documents\Presentations\Cinegy Tech Conference Munich 2016\DEMO Materials\Demo 1 - Integration via File\MyText.txt"/>
+		</Variables>
+	</Public>
+	<Private>
+		<Global/>
+		<Tree Format="5" NEXT_FREE_ID="100960" NAME="Template">
+			<Boards NAME="Boards">
+				<ItemBoard NAME="Camera"/>
+				<ItemBoard NAME="Timeline">
+					<Timeline ID="100414" NAME="Main">
+						<Atom NAME="Timeline">
+							<Parameter ID="100000" NAME="LoopStart" VALUE="103"/>
+							<Parameter ID="100001" NAME="LoopEnd" VALUE="107"/>
+							<Parameter ID="100002" NAME="LoopPlayMode" VALUE="1"/>
+						</Atom>
+						<Atom NAME="Background"/>
+						<TimelineEvent ID="100066" NAME="_Text Parameter Visibility">
+							<OutConnection NR="0" INPUTNR="0" TYPE="Parameter" ID="1"/>
+							<KeyFrames>
+								<KeyFrame Type="Bool" Frame="0" Easing="0" Value="1"/>
+								<KeyFrame Type="Bool" Frame="120" Easing="0" Value="1"/>
+							</KeyFrames>
+						</TimelineEvent>
+						<TimelineEvent ID="100225" NAME="_Text Parameter Visibility">
+							<OutConnection NR="0" INPUTNR="0" TYPE="Parameter" ID="4"/>
+							<KeyFrames>
+								<KeyFrame Type="Bool" Frame="0" Easing="0" Value="1"/>
+								<KeyFrame Type="Bool" Frame="120" Easing="0" Value="1"/>
+							</KeyFrames>
+						</TimelineEvent>
+						<TimelineEvent ID="100413" NAME="_Text Parameter Visibility">
+							<OutConnection NR="0" INPUTNR="0" TYPE="Parameter" ID="5"/>
+							<KeyFrames>
+								<KeyFrame Type="Bool" Frame="0" Easing="0" Value="1"/>
+								<KeyFrame Type="Bool" Frame="120" Easing="0" Value="1"/>
+							</KeyFrames>
+						</TimelineEvent>
+						<TimelineEvent ID="100417" NAME="_Transformation Rotation X">
+							<OutConnection NR="0" INPUTNR="0" TYPE="Parameter" ID="6"/>
+							<KeyFrames>
+								<KeyFrame Type="Double" Frame="0" Easing="0" Value="-90"/>
+								<KeyFrame Type="Double" Frame="12" Easing="0" Value="0"/>
+								<KeyFrame Type="Double" Frame="108" Easing="0" Value="0"/>
+								<KeyFrame Type="Double" Frame="120" Easing="0" Value="90"/>
+							</KeyFrames>
+						</TimelineEvent>
+						<TimelineEvent ID="100840" NAME="_Text Parameter Visibility">
+							<OutConnection NR="0" INPUTNR="0" TYPE="Parameter" ID="8"/>
+							<KeyFrames>
+								<KeyFrame Type="Bool" Frame="0" Easing="0" Value="1"/>
+								<KeyFrame Type="Bool" Frame="120" Easing="0" Value="1"/>
+							</KeyFrames>
+						</TimelineEvent>
+						<TimelineEvent ID="100893" NAME="_Text Parameter Visibility">
+							<OutConnection NR="0" INPUTNR="0" TYPE="Parameter" ID="9"/>
+							<KeyFrames>
+								<KeyFrame Type="Bool" Frame="0" Easing="0" Value="1"/>
+								<KeyFrame Type="Bool" Frame="120" Easing="0" Value="1"/>
+							</KeyFrames>
+						</TimelineEvent>
+						<TimelineEvent ID="100959" NAME="_Text Parameter Visibility">
+							<OutConnection NR="0" INPUTNR="0" TYPE="Parameter" ID="10"/>
+							<KeyFrames>
+								<KeyFrame Type="Bool" Frame="0" Easing="0" Value="1"/>
+								<KeyFrame Type="Bool" Frame="120" Easing="0" Value="1"/>
+							</KeyFrames>
+						</TimelineEvent>
+					</Timeline>
+				</ItemBoard>
+				<ItemBoard ID="100013" NAME="Variables">
+					<Event ID="100418" NAME="TextFile" Value="C:\Work\Michael\Dropbox\Work\Documents\Presentations\Cinegy Tech Conference Munich 2016\DEMO Materials\Demo 1 - Integration via File\MyText.txt">
+						<Atom NAME="Parameter">
+							<Parameter NAME="Export" VALUE="1"/>
+							<Parameter NAME="Type" VALUE="1"/>
+							<Parameter ID="100419" NAME="UpdateMode" VALUE="2"/>
+							<Parameter ID="100420" NAME="UseQueue" VALUE="0"/>
+						</Atom>
+						<OutConnection NR="0" INPUTNR="1" TYPE="Parameter" ID="7"/>
+					</Event>
+				</ItemBoard>
+			</Boards>
+			<Object SUB_TYPE="Group" NAME="Template">
+				<Instance SUB_TYPE="Transformation" TYPE="Transformation" NAME="Template">
+					<Atom NAME="Position"/>
+					<Atom NAME="Rotation"/>
+					<Atom NAME="Scale"/>
+				</Instance>
+				<Object SUB_TYPE="Group" ID="100894" NAME="Frame">
+					<Atom NAME="Parameter">
+						<Parameter ID="100906" NAME="Expand" VALUE="0"/>
+					</Atom>
+					<Instance SUB_TYPE="Transformation" TYPE="Transformation" NAME="Frame">
+						<Atom NAME="Position"/>
+						<Atom NAME="Rotation"/>
+						<Atom NAME="Scale"/>
+					</Instance>
+					<Object SUB_TYPE="Rectangle" OBJECT_TYPE="Plate" ID="100907" NAME="Black">
+						<Atom NAME="Parameter">
+							<Parameter ID="100937" NAME="Visibility" VALUE="1">
+								<InConnection NR="0" TYPE="TimelineEvent" ID="10" NAME="Animation"/>
+							</Parameter>
+							<Parameter ID="100938" NAME="Opacity" VALUE="51"/>
+						</Atom>
+						<UserData KEY="1" VALUE="Show"/>
+						<Instance SUB_TYPE="Transformation" TYPE="Transformation" NAME="Black">
+							<Atom NAME="Position">
+								<Parameter ID="100918" NAME="X" VALUE="58.87350463867188"/>
+								<Parameter ID="100919" NAME="Y" VALUE="312.1881713867188"/>
+							</Atom>
+							<Atom NAME="Rotation"/>
+							<Atom NAME="Scale">
+								<Parameter ID="100924" NAME="X" VALUE="1617.2177734375"/>
+								<Parameter ID="100925" NAME="Y" VALUE="211.0623321533203"/>
+							</Atom>
+						</Instance>
+						<Instance SUB_TYPE="Rectangle" TYPE="Geometry" NAME="Black">
+							<Atom NAME="AnalogClock"/>
+							<Atom NAME="Chamfer"/>
+							<Atom NAME="Blur"/>
+							<Atom NAME="Mask"/>
+							<Atom NAME="Resolution"/>
+						</Instance>
+						<Instance SUB_TYPE="Color" TYPE="Color" NAME="Black">
+							<Atom NAME="Color">
+								<Parameter ID="100912" NAME="Value" VALUE="FF000000"/>
+							</Atom>
+						</Instance>
+						<Instance SUB_TYPE="Texture" TYPE="Texture" NAME="Black">
+							<Atom NAME="File"/>
+							<Atom NAME="Image"/>
+							<Atom NAME="Parameter"/>
+							<Atom NAME="Info"/>
+						</Instance>
+					</Object>
+					<Object SUB_TYPE="Rectangle" OBJECT_TYPE="Plate" ID="100014" NAME="Plate">
+						<Atom NAME="Parameter">
+							<Parameter ID="100044" NAME="Visibility" VALUE="1">
+								<InConnection NR="0" TYPE="TimelineEvent" ID="1" NAME="Animation"/>
+							</Parameter>
+						</Atom>
+						<UserData KEY="1" VALUE="Show"/>
+						<Instance SUB_TYPE="Transformation" TYPE="Transformation" NAME="Plate">
+							<Atom NAME="Position">
+								<Parameter ID="100025" NAME="X" VALUE="-330.4723205566406"/>
+								<Parameter ID="100026" NAME="Y" VALUE="414.6292419433594"/>
+							</Atom>
+							<Atom NAME="Rotation"/>
+							<Atom NAME="Scale">
+								<Parameter ID="100031" NAME="X" VALUE="842.613037109375"/>
+								<Parameter ID="100032" NAME="Y" VALUE="4.821281433105469"/>
+							</Atom>
+						</Instance>
+						<Instance SUB_TYPE="Rectangle" TYPE="Geometry" NAME="Plate">
+							<Atom NAME="AnalogClock"/>
+							<Atom NAME="Chamfer"/>
+							<Atom NAME="Blur"/>
+							<Atom NAME="Mask"/>
+							<Atom NAME="Resolution"/>
+						</Instance>
+						<Instance SUB_TYPE="Color" TYPE="Color" NAME="Plate">
+							<Atom NAME="Color"/>
+						</Instance>
+						<Instance SUB_TYPE="Texture" TYPE="Texture" NAME="Plate">
+							<Atom NAME="File"/>
+							<Atom NAME="Image"/>
+							<Atom NAME="Parameter"/>
+							<Atom NAME="Info"/>
+						</Instance>
+					</Object>
+					<Object SUB_TYPE="Rectangle" OBJECT_TYPE="Plate" ID="100788" NAME="Plate">
+						<Atom NAME="Parameter">
+							<Parameter ID="100818" NAME="Visibility" VALUE="1">
+								<InConnection NR="0" TYPE="TimelineEvent" ID="8" NAME="Animation"/>
+							</Parameter>
+						</Atom>
+						<UserData KEY="1" VALUE="Show"/>
+						<Instance SUB_TYPE="Transformation" TYPE="Transformation" NAME="Plate">
+							<Atom NAME="Position">
+								<Parameter ID="100799" NAME="X" VALUE="-751.0552368164063"/>
+								<Parameter ID="100800" NAME="Y" VALUE="341.0782775878906"/>
+							</Atom>
+							<Atom NAME="Rotation"/>
+							<Atom NAME="Scale">
+								<Parameter ID="100805" NAME="X" VALUE="6.633148193359375"/>
+								<Parameter ID="100806" NAME="Y" VALUE="150.2777099609375"/>
+							</Atom>
+						</Instance>
+						<Instance SUB_TYPE="Rectangle" TYPE="Geometry" NAME="Plate">
+							<Atom NAME="AnalogClock"/>
+							<Atom NAME="Chamfer"/>
+							<Atom NAME="Blur"/>
+							<Atom NAME="Mask"/>
+							<Atom NAME="Resolution"/>
+						</Instance>
+						<Instance SUB_TYPE="Color" TYPE="Color" NAME="Plate">
+							<Atom NAME="Color"/>
+						</Instance>
+						<Instance SUB_TYPE="Texture" TYPE="Texture" NAME="Plate">
+							<Atom NAME="File"/>
+							<Atom NAME="Image"/>
+							<Atom NAME="Parameter"/>
+							<Atom NAME="Info"/>
+						</Instance>
+					</Object>
+					<Object SUB_TYPE="Rectangle" OBJECT_TYPE="Plate" ID="100173" NAME="Plate">
+						<Atom NAME="Parameter">
+							<Parameter ID="100203" NAME="Visibility" VALUE="1">
+								<InConnection NR="0" TYPE="TimelineEvent" ID="4" NAME="Animation"/>
+							</Parameter>
+						</Atom>
+						<UserData KEY="1" VALUE="Show"/>
+						<Instance SUB_TYPE="Transformation" TYPE="Transformation" NAME="Plate">
+							<Atom NAME="Position">
+								<Parameter ID="100184" NAME="X" VALUE="447.1156005859375"/>
+								<Parameter ID="100185" NAME="Y" VALUE="203.701416015625"/>
+							</Atom>
+							<Atom NAME="Rotation"/>
+							<Atom NAME="Scale">
+								<Parameter ID="100190" NAME="X" VALUE="842.613037109375"/>
+								<Parameter ID="100191" NAME="Y" VALUE="5.724921226501465"/>
+							</Atom>
+						</Instance>
+						<Instance SUB_TYPE="Rectangle" TYPE="Geometry" NAME="Plate">
+							<Atom NAME="AnalogClock"/>
+							<Atom NAME="Chamfer"/>
+							<Atom NAME="Blur"/>
+							<Atom NAME="Mask"/>
+							<Atom NAME="Resolution"/>
+						</Instance>
+						<Instance SUB_TYPE="Color" TYPE="Color" NAME="Plate">
+							<Atom NAME="Color"/>
+						</Instance>
+						<Instance SUB_TYPE="Texture" TYPE="Texture" NAME="Plate">
+							<Atom NAME="File"/>
+							<Atom NAME="Image"/>
+							<Atom NAME="Parameter"/>
+							<Atom NAME="Info"/>
+						</Instance>
+					</Object>
+					<Object SUB_TYPE="Rectangle" OBJECT_TYPE="Plate" ID="100841" NAME="Plate">
+						<Atom NAME="Parameter">
+							<Parameter ID="100871" NAME="Visibility" VALUE="1">
+								<InConnection NR="0" TYPE="TimelineEvent" ID="9" NAME="Animation"/>
+							</Parameter>
+						</Atom>
+						<UserData KEY="1" VALUE="Show"/>
+						<Instance SUB_TYPE="Transformation" TYPE="Transformation" NAME="Plate">
+							<Atom NAME="Position">
+								<Parameter ID="100852" NAME="X" VALUE="865.294189453125"/>
+								<Parameter ID="100853" NAME="Y" VALUE="276.2200622558594"/>
+							</Atom>
+							<Atom NAME="Rotation"/>
+							<Atom NAME="Scale">
+								<Parameter ID="100858" NAME="X" VALUE="7.301120281219482"/>
+								<Parameter ID="100859" NAME="Y" VALUE="150.2777099609375"/>
+							</Atom>
+						</Instance>
+						<Instance SUB_TYPE="Rectangle" TYPE="Geometry" NAME="Plate">
+							<Atom NAME="AnalogClock"/>
+							<Atom NAME="Chamfer"/>
+							<Atom NAME="Blur"/>
+							<Atom NAME="Mask"/>
+							<Atom NAME="Resolution"/>
+						</Instance>
+						<Instance SUB_TYPE="Color" TYPE="Color" NAME="Plate">
+							<Atom NAME="Color"/>
+						</Instance>
+						<Instance SUB_TYPE="Texture" TYPE="Texture" NAME="Plate">
+							<Atom NAME="File"/>
+							<Atom NAME="Image"/>
+							<Atom NAME="Parameter"/>
+							<Atom NAME="Info"/>
+						</Instance>
+					</Object>
+				</Object>
+				<Object SUB_TYPE="Text" ID="100227" NAME="My text from file">
+					<Atom NAME="Parameter">
+						<Parameter ID="100255" NAME="Visibility" VALUE="1">
+							<InConnection NR="0" TYPE="TimelineEvent" ID="5" NAME="Animation"/>
+						</Parameter>
+					</Atom>
+					<UserData KEY="1" VALUE="Show"/>
+					<Instance SUB_TYPE="Transformation" TYPE="Transformation" NAME="My text from file">
+						<Atom NAME="Position">
+							<Parameter ID="100240" NAME="X" VALUE="57.46148681640625"/>
+							<Parameter ID="100241" NAME="Y" VALUE="309.1498718261719"/>
+						</Atom>
+						<Atom NAME="Rotation">
+							<Parameter ID="100243" NAME="X" VALUE="-90">
+								<InConnection NR="0" TYPE="TimelineEvent" ID="6" NAME="Animation"/>
+							</Parameter>
+						</Atom>
+						<Atom NAME="Scale">
+							<Parameter ID="100246" NAME="X" VALUE="1530.271362304688"/>
+							<Parameter ID="100247" NAME="Y" VALUE="175.7474670410156"/>
+						</Atom>
+					</Instance>
+					<Instance SUB_TYPE="Text" TYPE="Geometry" NAME="My text from file">
+						<Atom NAME="TextSizing">
+							<Parameter ID="100402" NAME="Enable" VALUE="1"/>
+							<Parameter ID="100296" NAME="NoWrap" VALUE="1"/>
+						</Atom>
+						<Atom NAME="Marquee"/>
+						<Atom NAME="Roll"/>
+						<Atom NAME="Clock"/>
+						<Atom NAME="ValueReplacement"/>
+						<Atom NAME="Text">
+							<Parameter ID="100254" NAME="Value" VALUE="&lt;&lt;&lt; Update text in the file &gt;&gt;&gt;">
+								<InConnection NR="1" TYPE="Event" ID="7" NAME="Variable"/>
+							</Parameter>
+							<Parameter ID="100228" NAME="Resolution" VALUE="110"/>
+						</Atom>
+						<Atom NAME="Font">
+							<Parameter ID="100226" NAME="Family" VALUE="Arial"/>
+							<Parameter ID="100253" NAME="VerticalAlignment" VALUE="1"/>
+						</Atom>
+						<Atom NAME="Solid"/>
+						<Atom NAME="Shadow">
+							<Parameter ID="100261" NAME="Distance" VALUE="7"/>
+						</Atom>
+						<Atom NAME="ShadowColor"/>
+						<Atom NAME="Border"/>
+						<Atom NAME="BorderColor"/>
+						<Atom NAME="Glow"/>
+						<Atom NAME="GlowColor"/>
+						<Atom NAME="Bevel"/>
+					</Instance>
+					<Instance SUB_TYPE="Color" TYPE="Color" NAME="My text from file">
+						<Atom NAME="Color">
+							<Parameter ID="100239" NAME="Value" VALUE="FFFEFEBE"/>
+						</Atom>
+					</Instance>
+					<Instance SUB_TYPE="TextEffect" TYPE="Effect" NAME="My text from file">
+						<Atom NAME="Animation"/>
+						<Atom NAME="Misc"/>
+						<Atom NAME="TypeWriter"/>
+						<Atom NAME="Alpha"/>
+						<Atom NAME="Position"/>
+						<Atom NAME="Rotation"/>
+						<Atom NAME="Scale"/>
+						<Atom NAME="Flash">
+							<Parameter NAME="ImageCount" VALUE="2"/>
+						</Atom>
+						<Atom NAME="Arrange"/>
+						<Atom NAME="Counter"/>
+					</Instance>
+				</Object>
+			</Object>
+		</Tree>
+	</Private>
+</Titler>
