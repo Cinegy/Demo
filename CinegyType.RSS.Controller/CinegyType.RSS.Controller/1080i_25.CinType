@@ -1,0 +1,130 @@
+<Titler Height="1080" SavedTVFormat="5" FrameRate="25" CX="16" Version="V1.2" Duration="120" Width="1920" TVFormat="5" CY="9" Name="1080i_25" TVFormatName="1080i/25">
+	<Public>
+		<RootFolder Path="C:\Type RSS Task"/>
+		<Objects>
+			<Font GUID="GUID" STYLE="Regular" PATH="C:/windows/fonts/arial.ttf" NAME="Arial"/>
+		</Objects>
+		<Variables>
+			<Text VALUE="Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee " NAME="Text_Marquee" ID="100413"/>
+		</Variables>
+		<Properties>
+			<Timeline NAME="Main" ID="100016" LeaveLoopAt="0"/>
+		</Properties>
+	</Public>
+	<Private>
+		<Global/>
+		<Tree Format="5" NEXT_FREE_ID="100841" NAME="Template">
+			<Boards NAME="Boards">
+				<ItemBoard NAME="Camera"/>
+				<ItemBoard NAME="Timeline" ID="100015">
+					<Timeline NAME="Main" ID="100016">
+						<Atom NAME="Timeline">
+							<Parameter VALUE="100" NAME="LoopEnd" ID="100001"/>
+							<Parameter VALUE="1" NAME="LoopPlayMode" ID="100000"/>
+						</Atom>
+						<Atom NAME="Background"/>
+						<TimelineEvent NAME="_Text Parameter Visibility" ID="100214">
+							<OutConnection INPUTNR="0" NR="0" ID="1" TYPE="Parameter"/>
+							<KeyFrames>
+								<KeyFrame Easing="0" Type="Bool" Value="1" Frame="0"/>
+								<KeyFrame Easing="0" Type="Bool" Value="1" Frame="120"/>
+							</KeyFrames>
+						</TimelineEvent>
+						<TimelineEvent NAME="_Text Marquee Value" ID="100215">
+							<OutConnection INPUTNR="0" NR="0" ID="2" TYPE="Parameter"/>
+							<KeyFrames>
+								<KeyFrame Easing="0" Type="Double" Value="0" Frame="0"/>
+								<KeyFrame Easing="0" Type="Double" Value="100" Frame="120"/>
+							</KeyFrames>
+						</TimelineEvent>
+					</Timeline>
+				</ItemBoard>
+				<ItemBoard NAME="Variables" ID="100228">
+					<Event Value="Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee " NAME="Text_Marquee" ID="100413">
+						<Atom NAME="Parameter">
+							<Parameter VALUE="1" NAME="Export"/>
+							<Parameter VALUE="1" NAME="UpdateMode" ID="100825"/>
+						</Atom>
+						<OutConnection INPUTNR="1" NR="0" ID="3" TYPE="Parameter"/>
+					</Event>
+				</ItemBoard>
+			</Boards>
+			<Object SUB_TYPE="Group" NAME="Template">
+				<Instance SUB_TYPE="Transformation" NAME="Template" TYPE="Transformation">
+					<Atom NAME="Position"/>
+					<Atom NAME="Rotation"/>
+					<Atom NAME="Scale"/>
+					<Atom NAME="Axis"/>
+				</Instance>
+				<Object SUB_TYPE="Text" NAME="" ID="100021">
+					<Atom NAME="Parameter">
+						<Parameter VALUE="1" NAME="Visibility" ID="100125">
+							<InConnection NR="0" NAME="Animation" ID="1" TYPE="TimelineEvent"/>
+						</Parameter>
+					</Atom>
+					<UserData KEY="1" VALUE="Show"/>
+					<Instance SUB_TYPE="Transformation" NAME="" TYPE="Transformation">
+						<Atom NAME="Position">
+							<Parameter VALUE="-402.9920043945313" NAME="Y" ID="100106"/>
+						</Atom>
+						<Atom NAME="Rotation"/>
+						<Atom NAME="Scale">
+							<Parameter VALUE="1920" NAME="X" ID="100109"/>
+							<Parameter VALUE="84.01596832275391" NAME="Y" ID="100112"/>
+						</Atom>
+						<Atom NAME="Axis"/>
+					</Instance>
+					<Instance SUB_TYPE="Text" NAME="" ID="100030" TYPE="Geometry">
+						<Atom NAME="TextSizing">
+							<Parameter VALUE="100" NAME="MinSize" ID="100069"/>
+						</Atom>
+						<Atom NAME="Marquee">
+							<Parameter VALUE="1" NAME="Enable" ID="100210"/>
+							<Parameter VALUE="0" NAME="Value" ID="100031">
+								<InConnection NR="0" NAME="Animation" ID="2" TYPE="TimelineEvent"/>
+							</Parameter>
+							<Parameter VALUE="1" NAME="PlayMode" ID="100547"/>
+						</Atom>
+						<Atom NAME="Roll"/>
+						<Atom NAME="Clock"/>
+						<Atom NAME="ValueReplacement"/>
+						<Atom NAME="Text">
+							<Parameter VALUE="Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee Marquee " NAME="Value" ID="100122">
+								<InConnection NR="1" NAME="Variable" ID="3" TYPE="Event"/>
+							</Parameter>
+							<Parameter VALUE="110" NAME="Resolution" ID="100022"/>
+						</Atom>
+						<Atom NAME="Font">
+							<Parameter VALUE="Arial" NAME="Family" ID="100020"/>
+						</Atom>
+						<Atom NAME="Solid"/>
+						<Atom NAME="Shadow"/>
+						<Atom NAME="ShadowColor"/>
+						<Atom NAME="Border"/>
+						<Atom NAME="BorderColor"/>
+						<Atom NAME="Glow"/>
+						<Atom NAME="GlowColor"/>
+						<Atom NAME="Bevel"/>
+					</Instance>
+					<Instance SUB_TYPE="Color" NAME="" TYPE="Color">
+						<Atom NAME="Color"/>
+					</Instance>
+					<Instance SUB_TYPE="TextEffect" NAME="" TYPE="Effect">
+						<Atom NAME="Animation"/>
+						<Atom NAME="Misc"/>
+						<Atom NAME="TypeWriter"/>
+						<Atom NAME="Alpha"/>
+						<Atom NAME="Position"/>
+						<Atom NAME="Rotation"/>
+						<Atom NAME="Scale"/>
+						<Atom NAME="Flash">
+							<Parameter VALUE="2" NAME="ImageCount"/>
+						</Atom>
+						<Atom NAME="Arrange"/>
+						<Atom NAME="Counter"/>
+					</Instance>
+				</Object>
+			</Object>
+		</Tree>
+	</Private>
+</Titler>
