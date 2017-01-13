@@ -13,7 +13,7 @@ It's licensed as Apache2, so we encourage you to take this and change it to what
 
 However, just to make your life easier, we auto-build this using AppVeyor - here is how we are doing right now: 
 
-[![Build status](https://ci.appveyor.com/api/projects/status/2bk09ir9fbouhrr2?svg=true](https://ci.appveyor.com/project/cinegy/demo/branch/master)
+[![Build status](https://ci.appveyor.com/api/projects/status/2bk09ir9fbouhrr2?svg=true)](https://ci.appveyor.com/project/cinegy/demo/branch/master)
 
 You can check out the latest compiled binary from the master or pre-master code here:
 
