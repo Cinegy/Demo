@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CinegyCommon" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CinegyCommon" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:simpleType name="SEQUENCE_TYPE">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ST_NORMAL">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ST_STORY">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SEQUENCE_TYPE" nillable="true" type="tns:SEQUENCE_TYPE" />
+  <xs:simpleType name="LAYERTYPE">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Video" />
+      <xs:enumeration value="Audio" />
+      <xs:enumeration value="Super" />
+      <xs:enumeration value="Still" />
+      <xs:enumeration value="Script" />
+      <xs:enumeration value="ExtEvent" />
+      <xs:enumeration value="AudioOutput" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="LAYERTYPE" nillable="true" type="tns:LAYERTYPE" />
+</xs:schema>

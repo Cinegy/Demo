@@ -1,0 +1,1818 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/MessageContracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/MessageContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/CASCommonObjects" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/CinegyCommon" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="Node">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:NodeBase">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="access" type="q1:UserAccess" />
+          <xs:element name="creation" type="xs:dateTime" />
+          <xs:element name="deleted" type="xs:int" />
+          <xs:element name="extraData" nillable="true" type="xs:string" />
+          <xs:element name="lockStatus" type="xs:int" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="lockType" type="q2:LockType" />
+          <xs:element name="locker" nillable="true" type="xs:string" />
+          <xs:element name="metadataSet" nillable="true" type="tns:MetadataSetObject" />
+          <xs:element name="modification" type="xs:dateTime" />
+          <xs:element name="modificator" nillable="true" type="xs:string" />
+          <xs:element name="name" nillable="true" type="xs:string" />
+          <xs:element name="order" type="xs:long" />
+          <xs:element name="owner" nillable="true" type="xs:string" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="parentID" type="q3:NODEID" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="predecessorID" type="q4:NODEID" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Node" nillable="true" type="tns:Node" />
+  <xs:complexType name="NodeBase">
+    <xs:sequence>
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="_id" type="q5:NODEID" />
+      <xs:element name="_subtype" type="xs:int" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="_type" type="q6:NODE_TYPE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NodeBase" nillable="true" type="tns:NodeBase" />
+  <xs:complexType name="ClipBinNode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Node">
+        <xs:sequence>
+          <xs:element name="aspectRatio" nillable="true" type="ser:guid" />
+          <xs:element name="letterBox" nillable="true" type="ser:guid" />
+          <xs:element name="tvFormat" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ClipBinNode" nillable="true" type="tns:ClipBinNode" />
+  <xs:complexType name="BinNode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Node">
+        <xs:sequence>
+          <xs:element name="flags" type="xs:int" />
+          <xs:element name="isArchive" type="xs:boolean" />
+          <xs:element name="letterBox" nillable="true" type="ser:guid" />
+          <xs:element name="priority" type="xs:int" />
+          <xs:element name="rollLockType" type="xs:int" />
+          <xs:element name="rollLocker" nillable="true" type="xs:string" />
+          <xs:element name="tvFormat" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BinNode" nillable="true" type="tns:BinNode" />
+  <xs:complexType name="MogNode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Node">
+        <xs:sequence>
+          <xs:element name="ThumbnailURL" nillable="true" type="xs:string" />
+          <xs:element name="a10Alloc" nillable="true" type="ser:guid" />
+          <xs:element name="a11Alloc" nillable="true" type="ser:guid" />
+          <xs:element name="a12Alloc" nillable="true" type="ser:guid" />
+          <xs:element name="a13Alloc" nillable="true" type="ser:guid" />
+          <xs:element name="a14Alloc" nillable="true" type="ser:guid" />
+          <xs:element name="a15Alloc" nillable="true" type="ser:guid" />
+          <xs:element name="a16Alloc" nillable="true" type="ser:guid" />
+          <xs:element name="a1Alloc" nillable="true" type="ser:guid" />
+          <xs:element name="a2Alloc" nillable="true" type="ser:guid" />
+          <xs:element name="a3Alloc" nillable="true" type="ser:guid" />
+          <xs:element name="a4Alloc" nillable="true" type="ser:guid" />
+          <xs:element name="a5Alloc" nillable="true" type="ser:guid" />
+          <xs:element name="a6Alloc" nillable="true" type="ser:guid" />
+          <xs:element name="a7Alloc" nillable="true" type="ser:guid" />
+          <xs:element name="a8Alloc" nillable="true" type="ser:guid" />
+          <xs:element name="a9Alloc" nillable="true" type="ser:guid" />
+          <xs:element name="audioExtraData" nillable="true" type="xs:string" />
+          <xs:element name="audioType" nillable="true" type="ser:guid" />
+          <xs:element name="clipColor" type="xs:int" />
+          <xs:element name="fileSet" nillable="true" type="tns:FileSetObject" />
+          <xs:element name="isEntire" type="xs:boolean" />
+          <xs:element name="letterBox" nillable="true" type="ser:guid" />
+          <xs:element name="offset" type="xs:long" />
+          <xs:element name="originalTapeIn" type="xs:long" />
+          <xs:element name="rightsIndicator" nillable="true" type="ser:guid" />
+          <xs:element name="rollLockType" type="xs:int" />
+          <xs:element name="rollLocker" nillable="true" type="xs:string" />
+          <xs:element name="secondaryFileSet" nillable="true" type="tns:FileSetObject" />
+          <xs:element name="tapeIn" type="xs:long" />
+          <xs:element name="tapeOut" type="xs:long" />
+          <xs:element name="targetAspectRatio" nillable="true" type="ser:guid" />
+          <xs:element name="thumbnail" nillable="true" type="xs:long" />
+          <xs:element name="tvFormat" type="xs:int" />
+          <xs:element name="uses" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MogNode" nillable="true" type="tns:MogNode" />
+  <xs:complexType name="FileSetObject">
+    <xs:sequence>
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="ID" type="q7:NODEID" />
+      <xs:element name="files" nillable="true" type="tns:ArrayOfFileDescObject" />
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="type" type="q8:FileSetType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FileSetObject" nillable="true" type="tns:FileSetObject" />
+  <xs:complexType name="ArrayOfFileDescObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FileDescObject" nillable="true" type="tns:FileDescObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFileDescObject" nillable="true" type="tns:ArrayOfFileDescObject" />
+  <xs:complexType name="FileDescObject">
+    <xs:sequence>
+      <xs:element name="auxFileType" nillable="true" type="xs:string" />
+      <xs:element name="fileID" type="xs:int" />
+      <xs:element name="fileName" nillable="true" type="xs:string" />
+      <xs:element name="filePath" nillable="true" type="xs:string" />
+      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="fileType" type="q9:MAM_FILE_TYPES" />
+      <xs:element name="offset" type="xs:long" />
+      <xs:element name="pathID" type="xs:int" />
+      <xs:element name="quality" type="xs:int" />
+      <xs:element name="track" type="xs:int" />
+      <xs:element name="url" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FileDescObject" nillable="true" type="tns:FileDescObject" />
+  <xs:complexType name="ClipNode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Node">
+        <xs:sequence>
+          <xs:element name="AudioChannels" nillable="true" type="xs:int" />
+          <xs:element name="ClipColor" type="xs:int" />
+          <xs:element name="Comment" nillable="true" type="xs:string" />
+          <xs:element name="HasAudio1" type="xs:boolean" />
+          <xs:element name="HasAudio10" type="xs:boolean" />
+          <xs:element name="HasAudio11" type="xs:boolean" />
+          <xs:element name="HasAudio12" type="xs:boolean" />
+          <xs:element name="HasAudio13" type="xs:boolean" />
+          <xs:element name="HasAudio14" type="xs:boolean" />
+          <xs:element name="HasAudio15" type="xs:boolean" />
+          <xs:element name="HasAudio16" type="xs:boolean" />
+          <xs:element name="HasAudio2" type="xs:boolean" />
+          <xs:element name="HasAudio3" type="xs:boolean" />
+          <xs:element name="HasAudio4" type="xs:boolean" />
+          <xs:element name="HasAudio5" type="xs:boolean" />
+          <xs:element name="HasAudio6" type="xs:boolean" />
+          <xs:element name="HasAudio7" type="xs:boolean" />
+          <xs:element name="HasAudio8" type="xs:boolean" />
+          <xs:element name="HasAudio9" type="xs:boolean" />
+          <xs:element name="HasVideo" type="xs:boolean" />
+          <xs:element name="In" type="xs:long" />
+          <xs:element name="IsFlip" type="xs:boolean" />
+          <xs:element name="LinkedGroup" nillable="true" type="ser:guid" />
+          <xs:element name="Mix" nillable="true" type="tns:MixObjext" />
+          <xs:element name="MogID" type="ser:guid" />
+          <xs:element name="Out" type="xs:long" />
+          <xs:element name="Speed" nillable="true" type="xs:int" />
+          <xs:element name="SpeedDuration" nillable="true" type="xs:long" />
+          <xs:element name="TapeIn" type="xs:long" />
+          <xs:element name="TapeOut" type="xs:long" />
+          <xs:element name="TargetAspectRatio" nillable="true" type="ser:guid" />
+          <xs:element name="Thumbnail" nillable="true" type="xs:long" />
+          <xs:element name="ThumbnailURL" nillable="true" type="xs:string" />
+          <xs:element name="mog" nillable="true" type="tns:MogNode" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ClipNode" nillable="true" type="tns:ClipNode" />
+  <xs:complexType name="MixObjext">
+    <xs:sequence>
+      <xs:element name="Duration" type="xs:long" />
+      <xs:element name="Flags" type="xs:int" />
+      <xs:element name="MixID" type="ser:guid" />
+      <xs:element name="Params" nillable="true" type="xs:string" />
+      <xs:element name="Start" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MixObjext" nillable="true" type="tns:MixObjext" />
+  <xs:complexType name="MultiClipNode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Node">
+        <xs:sequence>
+          <xs:element name="AMasterID" nillable="true" type="ser:guid" />
+          <xs:element name="AudioChannels" nillable="true" type="xs:int" />
+          <xs:element name="GridH" type="xs:int" />
+          <xs:element name="GridV" type="xs:int" />
+          <xs:element name="In" nillable="true" type="xs:long" />
+          <xs:element name="IsFlip" type="xs:boolean" />
+          <xs:element name="LinkedGroup" nillable="true" type="ser:guid" />
+          <xs:element name="Mix" nillable="true" type="tns:MixObjext" />
+          <xs:element name="Out" nillable="true" type="xs:long" />
+          <xs:element name="Speed" nillable="true" type="xs:int" />
+          <xs:element name="SpeedDuration" nillable="true" type="xs:long" />
+          <xs:element name="SyncPoint" type="xs:long" />
+          <xs:element name="SyncType" type="ser:guid" />
+          <xs:element name="TVFormat" type="xs:int" />
+          <xs:element name="TapeIn" type="xs:long" />
+          <xs:element name="TapeOut" type="xs:long" />
+          <xs:element name="Thumbnail" nillable="true" type="xs:long" />
+          <xs:element name="ThumbnailURL" nillable="true" type="xs:string" />
+          <xs:element name="VMasterID" nillable="true" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MultiClipNode" nillable="true" type="tns:MultiClipNode" />
+  <xs:complexType name="SequenceNode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Node">
+        <xs:sequence>
+          <xs:element name="Comment" nillable="true" type="xs:string" />
+          <xs:element name="Duration" nillable="true" type="xs:long" />
+          <xs:element name="Editor" nillable="true" type="ser:guid" />
+          <xs:element name="In" nillable="true" type="xs:long" />
+          <xs:element name="Out" nillable="true" type="xs:long" />
+          <xs:element name="PlaybackStatus" type="xs:int" />
+          <xs:element name="Presenter" nillable="true" type="ser:guid" />
+          <xs:element name="RealStartTime" nillable="true" type="xs:long" />
+          <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/CinegyCommon" name="SequenceType" nillable="true" type="q10:SEQUENCE_TYPE" />
+          <xs:element name="StartTime" type="xs:long" />
+          <xs:element name="StoryType" nillable="true" type="ser:guid" />
+          <xs:element name="TVFormat" nillable="true" type="xs:int" />
+          <xs:element name="Version" nillable="true" type="xs:int" />
+          <xs:element name="Workflowstep" nillable="true" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SequenceNode" nillable="true" type="tns:SequenceNode" />
+  <xs:complexType name="DocumentNode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Node">
+        <xs:sequence>
+          <xs:element name="Comment" nillable="true" type="xs:string" />
+          <xs:element name="Description" nillable="true" type="xs:string" />
+          <xs:element name="FileName" nillable="true" type="xs:string" />
+          <xs:element name="Path" nillable="true" type="xs:string" />
+          <xs:element name="ShareID" type="xs:int" />
+          <xs:element name="ThumbnailURL" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DocumentNode" nillable="true" type="tns:DocumentNode" />
+  <xs:complexType name="Presets">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DescriptorBase">
+        <xs:sequence>
+          <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="DescriptorID" type="q11:NODEID" />
+          <xs:element name="PresetValue" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Presets" nillable="true" type="tns:Presets" />
+  <xs:complexType name="DescriptorBase">
+    <xs:sequence>
+      <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="ID" type="q12:NODEID" />
+      <xs:element name="Name" nillable="true" type="xs:string" />
+      <xs:element name="children" nillable="true" type="tns:ArrayOfDescriptorBase" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DescriptorBase" nillable="true" type="tns:DescriptorBase" />
+  <xs:complexType name="ArrayOfDescriptorBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DescriptorBase" nillable="true" type="tns:DescriptorBase" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDescriptorBase" nillable="true" type="tns:ArrayOfDescriptorBase" />
+  <xs:complexType name="Descriptor">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DescriptorBase">
+        <xs:sequence>
+          <xs:element name="Description" nillable="true" type="xs:string" />
+          <xs:element name="DescriptorExtraData" nillable="true" type="xs:string" />
+          <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="DescriptorExtraType" type="q13:DESCRIPTOR_EXTRA_TYPE" />
+          <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="DescriptorType" type="q14:DESCRIPTOR_TYPE" />
+          <xs:element name="FieldNum" type="xs:int" />
+          <xs:element name="Flags" type="xs:int" />
+          <xs:element name="InternalName" nillable="true" type="xs:string" />
+          <xs:element name="IsNeed2Fill" type="xs:boolean" />
+          <xs:element name="IsReadOnly" type="xs:boolean" />
+          <xs:element name="MaxValue" nillable="true" type="xs:int" />
+          <xs:element name="MinValue" nillable="true" type="xs:int" />
+          <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="ValueType" type="q15:DESCRIPTOR_VALUE_TYPE" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Descriptor" nillable="true" type="tns:Descriptor" />
+  <xs:complexType name="DescriptorGroup">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DescriptorBase">
+        <xs:sequence>
+          <xs:element name="ChildrenCount" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DescriptorGroup" nillable="true" type="tns:DescriptorGroup" />
+  <xs:complexType name="LayerNode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Node">
+        <xs:sequence>
+          <xs:element name="DefaultTrack" type="xs:int" />
+          <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/CinegyCommon" name="LayerType" type="q16:LAYERTYPE" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LayerNode" nillable="true" type="tns:LayerNode" />
+  <xs:complexType name="TrackNode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Node">
+        <xs:sequence>
+          <xs:element name="Flags" type="xs:int" />
+          <xs:element name="IsHidden" type="xs:boolean" />
+          <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/CinegyCommon" name="LayerType" type="q17:LAYERTYPE" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TrackNode" nillable="true" type="tns:TrackNode" />
+  <xs:complexType name="VideoTrackNode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TrackNode">
+        <xs:sequence>
+          <xs:element name="TrackType" type="tns:VIDEO_TRACK" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="VideoTrackNode" nillable="true" type="tns:VideoTrackNode" />
+  <xs:simpleType name="VIDEO_TRACK">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Normal" />
+      <xs:enumeration value="Still" />
+      <xs:enumeration value="CG" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="VIDEO_TRACK" nillable="true" type="tns:VIDEO_TRACK" />
+  <xs:complexType name="AudioTrackNode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TrackNode">
+        <xs:sequence>
+          <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="AudioOutputId" nillable="true" type="q18:NODEID" />
+          <xs:element name="AudioOutputTrackType" type="xs:int" />
+          <xs:element name="AudioTrackType" type="tns:AudioTrackType" />
+          <xs:element name="TrackType" type="tns:AUDIO_TRACK" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AudioTrackNode" nillable="true" type="tns:AudioTrackNode" />
+  <xs:simpleType name="AudioTrackType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Mono" />
+      <xs:enumeration value="Stereo" />
+      <xs:enumeration value="A5_1" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AudioTrackType" nillable="true" type="tns:AudioTrackType" />
+  <xs:simpleType name="AUDIO_TRACK">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Normal" />
+      <xs:enumeration value="Nat" />
+      <xs:enumeration value="Sot" />
+      <xs:enumeration value="Vo" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AUDIO_TRACK" nillable="true" type="tns:AUDIO_TRACK" />
+  <xs:complexType name="ScriptTrackNode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TrackNode">
+        <xs:sequence>
+          <xs:element name="TrackType" type="tns:SCRIPT_TRACK" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ScriptTrackNode" nillable="true" type="tns:ScriptTrackNode" />
+  <xs:simpleType name="SCRIPT_TRACK">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Script" />
+      <xs:enumeration value="Cc1" />
+      <xs:enumeration value="Vo">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SCRIPT_TRACK" nillable="true" type="tns:SCRIPT_TRACK" />
+  <xs:complexType name="EmptyClipNode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Node">
+        <xs:sequence>
+          <xs:element name="Duration" type="xs:long" />
+          <xs:element name="LinkedGroup" nillable="true" type="ser:guid" />
+          <xs:element name="Mix" nillable="true" type="tns:MixObjext" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EmptyClipNode" nillable="true" type="tns:EmptyClipNode" />
+  <xs:complexType name="LabelNode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Node">
+        <xs:sequence>
+          <xs:element name="Color" nillable="true" type="xs:int" />
+          <xs:element name="Comment" nillable="true" type="xs:string" />
+          <xs:element name="Flags" nillable="true" type="xs:int" />
+          <xs:element name="StartTime" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LabelNode" nillable="true" type="tns:LabelNode" />
+  <xs:complexType name="GraphicNode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Node">
+        <xs:sequence>
+          <xs:element name="Duration" type="xs:long" />
+          <xs:element name="FileName" nillable="true" type="xs:string" />
+          <xs:element name="GraphicUrl" nillable="true" type="xs:string" />
+          <xs:element name="In" nillable="true" type="xs:long" />
+          <xs:element name="LinkedGroup" nillable="true" type="ser:guid" />
+          <xs:element name="Mix" nillable="true" type="tns:MixObjext" />
+          <xs:element name="Out" nillable="true" type="xs:long" />
+          <xs:element name="ShareID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GraphicNode" nillable="true" type="tns:GraphicNode" />
+  <xs:complexType name="TitlerNode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Node">
+        <xs:sequence>
+          <xs:element name="Data" nillable="true" type="xs:string" />
+          <xs:element name="Duration" type="xs:long" />
+          <xs:element name="In" nillable="true" type="xs:long" />
+          <xs:element name="LinkedGroup" nillable="true" type="ser:guid" />
+          <xs:element name="Mix" nillable="true" type="tns:MixObjext" />
+          <xs:element name="Out" nillable="true" type="xs:long" />
+          <xs:element name="TVFormat" type="xs:int" />
+          <xs:element name="Thumbnail" nillable="true" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TitlerNode" nillable="true" type="tns:TitlerNode" />
+  <xs:complexType name="EffectNode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Node">
+        <xs:sequence>
+          <xs:element name="EffectType" type="xs:int" />
+          <xs:element name="Keyframes" nillable="true" type="tns:ArrayOfKeyframe" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EffectNode" nillable="true" type="tns:EffectNode" />
+  <xs:complexType name="ArrayOfKeyframe">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Keyframe" nillable="true" type="tns:Keyframe" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyframe" nillable="true" type="tns:ArrayOfKeyframe" />
+  <xs:complexType name="Keyframe">
+    <xs:sequence>
+      <xs:element name="kfData" nillable="true" type="xs:base64Binary" />
+      <xs:element name="kfTime" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Keyframe" nillable="true" type="tns:Keyframe" />
+  <xs:complexType name="EffectExNode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Node">
+        <xs:sequence>
+          <xs:element name="EngineID" type="ser:guid" />
+          <xs:element name="Params" nillable="true" type="xs:string" />
+          <xs:element name="PluginID" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EffectExNode" nillable="true" type="tns:EffectExNode" />
+  <xs:complexType name="JobDropFolderNode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Node">
+        <xs:sequence>
+          <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="JobFolderType" type="q19:JOB_FOLDER_TYPE" />
+          <xs:element name="JobGroup" type="xs:int" />
+          <xs:element name="Script" nillable="true" type="xs:string" />
+          <xs:element name="Settings" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="JobDropFolderNode" nillable="true" type="tns:JobDropFolderNode" />
+  <xs:complexType name="JobNode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Node">
+        <xs:sequence>
+          <xs:element name="IsDisabled" type="xs:boolean" />
+          <xs:element name="JobData" nillable="true" type="xs:string" />
+          <xs:element name="JobStatus" nillable="true" type="ser:guid" />
+          <xs:element name="JobType" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="JobNode" nillable="true" type="tns:JobNode" />
+  <xs:complexType name="JobSubjectNode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Node">
+        <xs:sequence>
+          <xs:element name="RefID" type="ser:guid" />
+          <xs:element name="RefNode" nillable="true" type="tns:Node" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="JobSubjectNode" nillable="true" type="tns:JobSubjectNode" />
+  <xs:complexType name="RefNode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Node">
+        <xs:sequence>
+          <xs:element name="Ref" nillable="true" type="tns:Node" />
+          <xs:element name="RefID" type="ser:guid" />
+          <xs:element name="RefNodeSubType" type="xs:int" />
+          <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="RefNodeType" type="q20:NODE_TYPE" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RefNode" nillable="true" type="tns:RefNode" />
+  <xs:complexType name="LiveClipNode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Node">
+        <xs:sequence>
+          <xs:element name="Duration" type="xs:long" />
+          <xs:element name="LinkedGroup" nillable="true" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LiveClipNode" nillable="true" type="tns:LiveClipNode" />
+  <xs:complexType name="ScriptClipNode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Node">
+        <xs:sequence>
+          <xs:element name="Duration" type="xs:long" />
+          <xs:element name="Flags" type="xs:int" />
+          <xs:element name="LinkedGroup" nillable="true" type="ser:guid" />
+          <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="LinkedNode" nillable="true" type="q21:NODEID" />
+          <xs:element name="PresenterID" nillable="true" type="ser:guid" />
+          <xs:element name="RealDuration" nillable="true" type="xs:long" />
+          <xs:element name="Script" nillable="true" type="xs:string" />
+          <xs:element name="SourceID" nillable="true" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ScriptClipNode" nillable="true" type="tns:ScriptClipNode" />
+  <xs:complexType name="ExtEventNode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Node">
+        <xs:sequence>
+          <xs:element name="Command" nillable="true" type="xs:string" />
+          <xs:element name="In" type="xs:long" />
+          <xs:element name="LinkedGroup" nillable="true" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ExtEventNode" nillable="true" type="tns:ExtEventNode" />
+  <xs:complexType name="StoryRundownNode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Node">
+        <xs:sequence>
+          <xs:element name="Duration" nillable="true" type="xs:long" />
+          <xs:element name="TVFormat" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StoryRundownNode" nillable="true" type="tns:StoryRundownNode" />
+  <xs:complexType name="TextFeedNode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Node">
+        <xs:sequence>
+          <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="Flags" type="q22:NewsFlags" />
+          <xs:element name="Hash" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TextFeedNode" nillable="true" type="tns:TextFeedNode" />
+  <xs:complexType name="SearchQueryNode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Node">
+        <xs:sequence>
+          <xs:element name="IsAdvanced" type="xs:boolean" />
+          <xs:element name="IsPrivate" type="xs:boolean" />
+          <xs:element name="Query" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchQueryNode" nillable="true" type="tns:SearchQueryNode" />
+  <xs:complexType name="MosNode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Node">
+        <xs:sequence>
+          <xs:element name="Duration" type="xs:long" />
+          <xs:element name="MosID" nillable="true" type="xs:string" />
+          <xs:element name="MosObj" nillable="true" type="xs:string" />
+          <xs:element name="MosType" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MosNode" nillable="true" type="tns:MosNode" />
+  <xs:complexType name="RundownNode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Node">
+        <xs:sequence>
+          <xs:element name="OnAir" type="xs:boolean" />
+          <xs:element name="RundownID" nillable="true" type="xs:string" />
+          <xs:element name="StartTime" nillable="true" type="xs:long" />
+          <xs:element name="TVFormat" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RundownNode" nillable="true" type="tns:RundownNode" />
+  <xs:complexType name="DayTemplateNode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Node">
+        <xs:sequence>
+          <xs:element name="Date" type="xs:dateTime" />
+          <xs:element name="Duration" type="xs:long" />
+          <xs:element name="Flags" type="xs:int" />
+          <xs:element name="Start" type="xs:long" />
+          <xs:element name="TVFormat" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DayTemplateNode" nillable="true" type="tns:DayTemplateNode" />
+  <xs:complexType name="OradCommonNode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Node">
+        <xs:sequence>
+          <xs:element name="UniqueID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OradCommonNode" nillable="true" type="tns:OradCommonNode" />
+  <xs:complexType name="OradDatalinkNode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OradCommonNode">
+        <xs:sequence>
+          <xs:element name="ConnectionString" nillable="true" type="xs:string" />
+          <xs:element name="ConnectionType" type="ser:guid" />
+          <xs:element name="Password" nillable="true" type="xs:string" />
+          <xs:element name="User" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OradDatalinkNode" nillable="true" type="tns:OradDatalinkNode" />
+  <xs:complexType name="OradDataqueryNode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OradCommonNode">
+        <xs:sequence>
+          <xs:element name="XmlData" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OradDataqueryNode" nillable="true" type="tns:OradDataqueryNode" />
+  <xs:complexType name="OradPageNode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OradCommonNode">
+        <xs:sequence>
+          <xs:element name="Background" nillable="true" type="xs:base64Binary" />
+          <xs:element name="Thumbnail" nillable="true" type="xs:base64Binary" />
+          <xs:element name="XmlData" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OradPageNode" nillable="true" type="tns:OradPageNode" />
+  <xs:complexType name="OradTickerNode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OradCommonNode">
+        <xs:sequence>
+          <xs:element name="TickerName" nillable="true" type="xs:string" />
+          <xs:element name="XmlData" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OradTickerNode" nillable="true" type="tns:OradTickerNode" />
+  <xs:complexType name="OradDatasetNode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OradCommonNode">
+        <xs:sequence>
+          <xs:element name="XmlData" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OradDatasetNode" nillable="true" type="tns:OradDatasetNode" />
+  <xs:complexType name="OradGraphicItemNode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OradCommonNode">
+        <xs:sequence>
+          <xs:element name="Thumbnail" nillable="true" type="xs:base64Binary" />
+          <xs:element name="XmlData" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OradGraphicItemNode" nillable="true" type="tns:OradGraphicItemNode" />
+  <xs:complexType name="OradTickerItemNode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OradCommonNode">
+        <xs:sequence>
+          <xs:element name="Thumbnail" nillable="true" type="xs:base64Binary" />
+          <xs:element name="XmlData" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OradTickerItemNode" nillable="true" type="tns:OradTickerItemNode" />
+  <xs:complexType name="OradAudioItemNode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OradCommonNode">
+        <xs:sequence>
+          <xs:element name="Hdvg" nillable="true" type="xs:string" />
+          <xs:element name="Mixing" nillable="true" type="xs:string" />
+          <xs:element name="Thumbnail" nillable="true" type="xs:base64Binary" />
+          <xs:element name="WaveFile" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OradAudioItemNode" nillable="true" type="tns:OradAudioItemNode" />
+  <xs:complexType name="OradDdrItemNode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OradCommonNode">
+        <xs:sequence>
+          <xs:element name="ClipName" nillable="true" type="xs:string" />
+          <xs:element name="DdrID" nillable="true" type="xs:string" />
+          <xs:element name="DdrType" type="xs:int" />
+          <xs:element name="PlayMode" type="xs:int" />
+          <xs:element name="Start" type="xs:int" />
+          <xs:element name="Stop" type="xs:int" />
+          <xs:element name="Thumbnail" nillable="true" type="xs:base64Binary" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OradDdrItemNode" nillable="true" type="tns:OradDdrItemNode" />
+  <xs:complexType name="OradExternalItemNode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OradCommonNode">
+        <xs:sequence>
+          <xs:element name="Arguments" nillable="true" type="xs:string" />
+          <xs:element name="Command" nillable="true" type="xs:string" />
+          <xs:element name="Directory" nillable="true" type="xs:string" />
+          <xs:element name="Thumbnail" nillable="true" type="xs:base64Binary" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OradExternalItemNode" nillable="true" type="tns:OradExternalItemNode" />
+  <xs:complexType name="OradRundownNode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OradCommonNode">
+        <xs:sequence>
+          <xs:element name="XmlData" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OradRundownNode" nillable="true" type="tns:OradRundownNode" />
+  <xs:complexType name="OradSceneNode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OradCommonNode">
+        <xs:sequence>
+          <xs:element name="FileName" nillable="true" type="xs:string" />
+          <xs:element name="ProjectID" nillable="true" type="xs:string" />
+          <xs:element name="SceneID" nillable="true" type="xs:string" />
+          <xs:element name="SceneName" nillable="true" type="xs:string" />
+          <xs:element name="ShareID" type="xs:int" />
+          <xs:element name="Thumbnail" nillable="true" type="xs:base64Binary" />
+          <xs:element name="Version" nillable="true" type="xs:int" />
+          <xs:element name="XmlData" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OradSceneNode" nillable="true" type="tns:OradSceneNode" />
+  <xs:complexType name="OradTransitionNode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OradCommonNode">
+        <xs:sequence>
+          <xs:element name="Duration" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OradTransitionNode" nillable="true" type="tns:OradTransitionNode" />
+  <xs:complexType name="Orad3DPlayNode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OradCommonNode">
+        <xs:sequence>
+          <xs:element name="IsExcluded" type="xs:boolean" />
+          <xs:element name="Thumbnail" nillable="true" type="xs:base64Binary" />
+          <xs:element name="XmlData" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Orad3DPlayNode" nillable="true" type="tns:Orad3DPlayNode" />
+  <xs:complexType name="MetadataSetObject">
+    <xs:sequence>
+      <xs:element name="metadata" nillable="true" type="tns:ArrayOfMetadataObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MetadataSetObject" nillable="true" type="tns:MetadataSetObject" />
+  <xs:complexType name="ArrayOfMetadataObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MetadataObject" nillable="true" type="tns:MetadataObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMetadataObject" nillable="true" type="tns:ArrayOfMetadataObject" />
+  <xs:complexType name="MetadataObject">
+    <xs:sequence>
+      <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="descriptorID" type="q23:NODEID" />
+      <xs:element name="fieldNum" type="xs:int" />
+      <xs:element name="internalName" nillable="true" type="xs:string" />
+      <xs:element name="type" nillable="true" type="xs:string" />
+      <xs:element name="value" nillable="true" type="xs:anyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MetadataObject" nillable="true" type="tns:MetadataObject" />
+  <xs:complexType name="ArrayOfNodeBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NodeBase" nillable="true" type="tns:NodeBase" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNodeBase" nillable="true" type="tns:ArrayOfNodeBase" />
+  <xs:complexType name="ArrayOfNode">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Node" nillable="true" type="tns:Node" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNode" nillable="true" type="tns:ArrayOfNode" />
+  <xs:complexType name="SearchParameters">
+    <xs:sequence>
+      <xs:element name="_guidSession" type="ser:guid" />
+      <xs:element name="_guid_from_here" type="ser:guid" />
+      <xs:element name="_guid_start_id" type="ser:guid" />
+      <xs:element name="_nIsSync" type="xs:int" />
+      <xs:element name="_nNarrowDateType" type="xs:int" />
+      <xs:element name="_nNarrowPeriod" type="xs:int" />
+      <xs:element name="_nPageSize" type="xs:int" />
+      <xs:element name="_nReserved" type="xs:int" />
+      <xs:element name="_nTotal" type="xs:int" />
+      <xs:element name="_nUseTotal" type="xs:int" />
+      <xs:element name="_str_search" nillable="true" type="xs:string" />
+      <xs:element name="_str_types" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchParameters" nillable="true" type="tns:SearchParameters" />
+  <xs:complexType name="ArrayOfSearchResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SearchResult" nillable="true" type="tns:SearchResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSearchResult" nillable="true" type="tns:ArrayOfSearchResult" />
+  <xs:complexType name="SearchResult">
+    <xs:sequence>
+      <xs:element name="_node" nillable="true" type="tns:Node" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchResult" nillable="true" type="tns:SearchResult" />
+  <xs:complexType name="Search2Parameters">
+    <xs:sequence>
+      <xs:element name="_cd_from" nillable="true" type="xs:string" />
+      <xs:element name="_cd_to" nillable="true" type="xs:string" />
+      <xs:element name="_guidSession" type="ser:guid" />
+      <xs:element name="_guid_from_here" type="ser:guid" />
+      <xs:element name="_md_from" nillable="true" type="xs:string" />
+      <xs:element name="_md_to" nillable="true" type="xs:string" />
+      <xs:element name="_nNarrowDateType" type="xs:int" />
+      <xs:element name="_nNarrowPeriod" type="xs:int" />
+      <xs:element name="_nPageNum" type="xs:int" />
+      <xs:element name="_nPageSize" type="xs:int" />
+      <xs:element name="_nTotal" type="xs:int" />
+      <xs:element name="_n_exclude_cd" type="xs:int" />
+      <xs:element name="_n_exclude_md" type="xs:int" />
+      <xs:element name="_str_order" nillable="true" type="xs:string" />
+      <xs:element name="_str_search" nillable="true" type="xs:string" />
+      <xs:element name="_str_types" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Search2Parameters" nillable="true" type="tns:Search2Parameters" />
+  <xs:complexType name="ArrayOfSearch2Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Search2Result" nillable="true" type="tns:Search2Result" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSearch2Result" nillable="true" type="tns:ArrayOfSearch2Result" />
+  <xs:complexType name="Search2Result">
+    <xs:sequence>
+      <xs:element name="_node" nillable="true" type="tns:Node" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Search2Result" nillable="true" type="tns:Search2Result" />
+  <xs:complexType name="ArrayOfSearchListResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SearchListResult" nillable="true" type="tns:SearchListResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSearchListResult" nillable="true" type="tns:ArrayOfSearchListResult" />
+  <xs:complexType name="SearchListResult">
+    <xs:sequence>
+      <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="_node_id" type="q24:NODEID" />
+      <xs:element name="_node_sub_type" type="xs:int" />
+      <xs:element name="_node_type" type="xs:int" />
+      <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="_parent_id" type="q25:NODEID" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchListResult" nillable="true" type="tns:SearchListResult" />
+  <xs:complexType name="SearchPagerParameters">
+    <xs:sequence>
+      <xs:element name="_guidFromHere" type="ser:guid" />
+      <xs:element name="_guidSession" type="ser:guid" />
+      <xs:element name="_nIsSync" type="xs:int" />
+      <xs:element name="_nPageNum" type="xs:int" />
+      <xs:element name="_nPageSize" type="xs:int" />
+      <xs:element name="_orderBy" nillable="true" type="xs:string" />
+      <xs:element name="_strSearch" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchPagerParameters" nillable="true" type="tns:SearchPagerParameters" />
+  <xs:complexType name="SubTypeObjects">
+    <xs:sequence>
+      <xs:element name="SubTypes" nillable="true" type="tns:ArrayOfSubTypeObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SubTypeObjects" nillable="true" type="tns:SubTypeObjects" />
+  <xs:complexType name="ArrayOfSubTypeObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SubTypeObject" nillable="true" type="tns:SubTypeObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSubTypeObject" nillable="true" type="tns:ArrayOfSubTypeObject" />
+  <xs:complexType name="SubTypeObject">
+    <xs:sequence>
+      <xs:element name="CanCreatedByUser" type="xs:boolean" />
+      <xs:element name="CanDeletedByUser" type="xs:boolean" />
+      <xs:element name="Comment" nillable="true" type="xs:string" />
+      <xs:element name="Extension" nillable="true" type="xs:string" />
+      <xs:element name="Flags" type="xs:int" />
+      <xs:element name="IconLarge" nillable="true" type="xs:base64Binary" />
+      <xs:element name="IconLargeName" nillable="true" type="xs:string" />
+      <xs:element name="IconSmall" nillable="true" type="xs:base64Binary" />
+      <xs:element name="IconSmallName" nillable="true" type="xs:string" />
+      <xs:element name="Id" type="ser:guid" />
+      <xs:element name="Name" nillable="true" type="xs:string" />
+      <xs:element name="SubType" type="xs:int" />
+      <xs:element name="Type" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SubTypeObject" nillable="true" type="tns:SubTypeObject" />
+  <xs:complexType name="TVFormatObjects">
+    <xs:sequence>
+      <xs:element name="TVFormats" nillable="true" type="tns:ArrayOfTVFormatObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TVFormatObjects" nillable="true" type="tns:TVFormatObjects" />
+  <xs:complexType name="ArrayOfTVFormatObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TVFormatObject" nillable="true" type="tns:TVFormatObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTVFormatObject" nillable="true" type="tns:ArrayOfTVFormatObject" />
+  <xs:complexType name="TVFormatObject">
+    <xs:sequence>
+      <xs:element name="Aspect" nillable="true" type="tns:Presets" />
+      <xs:element name="Description" nillable="true" type="xs:string" />
+      <xs:element name="FrameStruct" nillable="true" type="tns:Presets" />
+      <xs:element name="Frequency" nillable="true" type="tns:Presets" />
+      <xs:element name="Height" type="xs:int" />
+      <xs:element name="Name" nillable="true" type="xs:string" />
+      <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="Type" type="q26:TVFORMAT" />
+      <xs:element name="Width" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TVFormatObject" nillable="true" type="tns:TVFormatObject" />
+  <xs:complexType name="ArrayOfJobNode">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="JobNode" nillable="true" type="tns:JobNode" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfJobNode" nillable="true" type="tns:ArrayOfJobNode" />
+  <xs:complexType name="ArrayOfBaseUpdate">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BaseUpdate" nillable="true" type="tns:BaseUpdate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBaseUpdate" nillable="true" type="tns:ArrayOfBaseUpdate" />
+  <xs:complexType name="BaseUpdate">
+    <xs:sequence>
+      <xs:element name="IsSelfUpdate" type="xs:boolean" />
+      <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="action" type="q27:UpdateActions" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BaseUpdate" nillable="true" type="tns:BaseUpdate" />
+  <xs:complexType name="ChildrenInsertedUpdate">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseUpdate">
+        <xs:sequence>
+          <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="children" nillable="true" type="q28:ArrayOfNODEID" />
+          <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="parent" type="q29:NODEID" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChildrenInsertedUpdate" nillable="true" type="tns:ChildrenInsertedUpdate" />
+  <xs:complexType name="ChildrenDeletedUpdate">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseUpdate">
+        <xs:sequence>
+          <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="children" nillable="true" type="q30:ArrayOfNODEID" />
+          <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="parent" type="q31:NODEID" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChildrenDeletedUpdate" nillable="true" type="tns:ChildrenDeletedUpdate" />
+  <xs:complexType name="RenameUpdate">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseUpdate">
+        <xs:sequence>
+          <xs:element name="name" nillable="true" type="xs:string" />
+          <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="node" type="q32:NODEID" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RenameUpdate" nillable="true" type="tns:RenameUpdate" />
+  <xs:complexType name="FieldUpdate">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseUpdate">
+        <xs:sequence>
+          <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="node" type="q33:NODEID" />
+          <xs:element name="prop" nillable="true" type="tns:PredefinedPropertyObject" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FieldUpdate" nillable="true" type="tns:FieldUpdate" />
+  <xs:complexType name="PredefinedPropertyObject">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PropertyObjectBase">
+        <xs:sequence>
+          <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="fieldNum" type="q34:PROPERTY_NUM" />
+          <xs:element name="value" nillable="true" type="xs:anyType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PredefinedPropertyObject" nillable="true" type="tns:PredefinedPropertyObject" />
+  <xs:complexType name="PropertyObjectBase">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="PropertyObjectBase" nillable="true" type="tns:PropertyObjectBase" />
+  <xs:complexType name="PropertyObject">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PropertyObjectBase">
+        <xs:sequence>
+          <xs:element name="fieldNum" type="xs:int" />
+          <xs:element name="value" nillable="true" type="xs:anyType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PropertyObject" nillable="true" type="tns:PropertyObject" />
+  <xs:complexType name="MetadataUpdate">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseUpdate">
+        <xs:sequence>
+          <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="node" type="q35:NODEID" />
+          <xs:element name="prop" nillable="true" type="tns:PropertyObject" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MetadataUpdate" nillable="true" type="tns:MetadataUpdate" />
+  <xs:complexType name="ThumbnailUpdate">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:FieldUpdate">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ThumbnailUpdate" nillable="true" type="tns:ThumbnailUpdate" />
+  <xs:complexType name="OrderUpdate">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseUpdate">
+        <xs:sequence>
+          <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="node" type="q36:NODEID" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OrderUpdate" nillable="true" type="tns:OrderUpdate" />
+  <xs:complexType name="LockUpdate">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseUpdate">
+        <xs:sequence>
+          <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="locktype" type="q37:LockType" />
+          <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="node" type="q38:NODEID" />
+          <xs:element name="username" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LockUpdate" nillable="true" type="tns:LockUpdate" />
+  <xs:complexType name="UnlockUpdate">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseUpdate">
+        <xs:sequence>
+          <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="node" type="q39:NODEID" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UnlockUpdate" nillable="true" type="tns:UnlockUpdate" />
+  <xs:complexType name="ChangeDeleteUpdate">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseUpdate">
+        <xs:sequence>
+          <xs:element name="deleted" type="xs:int" />
+          <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="node" type="q40:NODEID" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChangeDeleteUpdate" nillable="true" type="tns:ChangeDeleteUpdate" />
+  <xs:complexType name="GlobalParameterObjects">
+    <xs:sequence>
+      <xs:element name="parameters" nillable="true" type="tns:ArrayOfGlobalParameter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GlobalParameterObjects" nillable="true" type="tns:GlobalParameterObjects" />
+  <xs:complexType name="ArrayOfGlobalParameter">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GlobalParameter" nillable="true" type="tns:GlobalParameter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGlobalParameter" nillable="true" type="tns:ArrayOfGlobalParameter" />
+  <xs:complexType name="GlobalParameter">
+    <xs:sequence>
+      <xs:element name="_param_basetype" nillable="true" type="xs:string" />
+      <xs:element name="_param_collation" nillable="true" type="xs:string" />
+      <xs:element name="_param_maxlength" type="xs:int" />
+      <xs:element name="_param_name" nillable="true" type="xs:string" />
+      <xs:element name="_param_precision" type="xs:int" />
+      <xs:element name="_param_scale" type="xs:int" />
+      <xs:element name="_param_totalbytes" type="xs:int" />
+      <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="_param_type" type="q41:GP_TYPE" />
+      <xs:element name="_param_value" nillable="true" type="xs:anyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GlobalParameter" nillable="true" type="tns:GlobalParameter" />
+  <xs:complexType name="ColorParameterObjects">
+    <xs:sequence>
+      <xs:element name="parameters" nillable="true" type="tns:ArrayOfColorParameter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ColorParameterObjects" nillable="true" type="tns:ColorParameterObjects" />
+  <xs:complexType name="ArrayOfColorParameter">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ColorParameter" nillable="true" type="tns:ColorParameter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfColorParameter" nillable="true" type="tns:ArrayOfColorParameter" />
+  <xs:complexType name="ColorParameter">
+    <xs:sequence>
+      <xs:element name="_color_index" type="xs:int" />
+      <xs:element name="_color_value" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ColorParameter" nillable="true" type="tns:ColorParameter" />
+  <xs:complexType name="LogTemplateObjects">
+    <xs:sequence>
+      <xs:element name="templates" nillable="true" type="tns:ArrayOfLogTemplate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LogTemplateObjects" nillable="true" type="tns:LogTemplateObjects" />
+  <xs:complexType name="ArrayOfLogTemplate">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LogTemplate" nillable="true" type="tns:LogTemplate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLogTemplate" nillable="true" type="tns:ArrayOfLogTemplate" />
+  <xs:complexType name="LogTemplate">
+    <xs:sequence>
+      <xs:element name="_guid" type="ser:guid" />
+      <xs:element name="_name" nillable="true" type="xs:string" />
+      <xs:element name="_path" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LogTemplate" nillable="true" type="tns:LogTemplate" />
+  <xs:complexType name="UserActionObjects">
+    <xs:sequence>
+      <xs:element name="actions" nillable="true" type="tns:ArrayOfUserAction" />
+      <xs:element name="enabled" type="xs:int" />
+      <xs:element name="username" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserActionObjects" nillable="true" type="tns:UserActionObjects" />
+  <xs:complexType name="ArrayOfUserAction">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserAction" nillable="true" type="tns:UserAction" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserAction" nillable="true" type="tns:ArrayOfUserAction" />
+  <xs:complexType name="UserAction">
+    <xs:sequence>
+      <xs:element name="_enabled" type="xs:boolean" />
+      <xs:element name="_id" type="xs:int" />
+      <xs:element name="_name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserAction" nillable="true" type="tns:UserAction" />
+  <xs:complexType name="PropertySetObject">
+    <xs:sequence>
+      <xs:element name="properties" nillable="true" type="tns:ArrayOfPropertyObjectBase" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PropertySetObject" nillable="true" type="tns:PropertySetObject" />
+  <xs:complexType name="ArrayOfPropertyObjectBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PropertyObjectBase" nillable="true" type="tns:PropertyObjectBase" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPropertyObjectBase" nillable="true" type="tns:ArrayOfPropertyObjectBase" />
+  <xs:complexType name="TagsCloudObject">
+    <xs:sequence>
+      <xs:element name="tags" nillable="true" type="tns:ArrayOfTag" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TagsCloudObject" nillable="true" type="tns:TagsCloudObject" />
+  <xs:complexType name="ArrayOfTag">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Tag" nillable="true" type="tns:Tag" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTag" nillable="true" type="tns:ArrayOfTag" />
+  <xs:complexType name="Tag">
+    <xs:sequence>
+      <xs:element name="number" type="xs:int" />
+      <xs:element name="tag_name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Tag" nillable="true" type="tns:Tag" />
+  <xs:complexType name="MosObjects">
+    <xs:sequence>
+      <xs:element name="objects" nillable="true" type="tns:ArrayOfMosObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MosObjects" nillable="true" type="tns:MosObjects" />
+  <xs:complexType name="ArrayOfMosObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MosObject" nillable="true" type="tns:MosObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMosObject" nillable="true" type="tns:ArrayOfMosObject" />
+  <xs:complexType name="MosObject">
+    <xs:sequence>
+      <xs:element name="description" nillable="true" type="xs:string" />
+      <xs:element name="hostname" nillable="true" type="xs:string" />
+      <xs:element name="isStoreSend" type="xs:boolean" />
+      <xs:element name="mosID" nillable="true" type="xs:string" />
+      <xs:element name="progID" nillable="true" type="xs:string" />
+      <xs:element name="type" nillable="true" type="xs:string" />
+      <xs:element name="version" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MosObject" nillable="true" type="tns:MosObject" />
+  <xs:complexType name="MappingObject">
+    <xs:sequence>
+      <xs:element name="schemaID" type="ser:guid" />
+      <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="type" type="q42:MappingType" />
+      <xs:element name="xml" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MappingObject" nillable="true" type="tns:MappingObject" />
+  <xs:complexType name="MappingTypeObject">
+    <xs:sequence>
+      <xs:element name="id" type="ser:guid" />
+      <xs:element name="name" nillable="true" type="xs:string" />
+      <xs:element name="xmlSchema" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MappingTypeObject" nillable="true" type="tns:MappingTypeObject" />
+  <xs:complexType name="MappingTypeObjects">
+    <xs:sequence>
+      <xs:element name="mappings" nillable="true" type="tns:ArrayOfMappingTypeObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MappingTypeObjects" nillable="true" type="tns:MappingTypeObjects" />
+  <xs:complexType name="ArrayOfMappingTypeObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MappingTypeObject" nillable="true" type="tns:MappingTypeObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMappingTypeObject" nillable="true" type="tns:ArrayOfMappingTypeObject" />
+  <xs:complexType name="MetadataTemplateSetObject">
+    <xs:sequence>
+      <xs:element name="templates" nillable="true" type="tns:ArrayOfMetadataTemplate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MetadataTemplateSetObject" nillable="true" type="tns:MetadataTemplateSetObject" />
+  <xs:complexType name="ArrayOfMetadataTemplate">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MetadataTemplate" nillable="true" type="tns:MetadataTemplate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMetadataTemplate" nillable="true" type="tns:ArrayOfMetadataTemplate" />
+  <xs:complexType name="MetadataTemplate">
+    <xs:sequence>
+      <xs:element name="form" nillable="true" type="xs:string" />
+      <xs:element name="formBinary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="isDefault" type="xs:boolean" />
+      <xs:element name="isDisabled" type="xs:boolean" />
+      <xs:element name="isUserDefault" type="xs:boolean" />
+      <xs:element name="name" nillable="true" type="xs:string" />
+      <xs:element name="nodeSubtype" type="xs:int" />
+      <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="nodeType" type="q43:NODE_TYPE" />
+      <xs:element name="templateID" type="ser:guid" />
+      <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="type" type="q44:MetadataTemplateType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MetadataTemplate" nillable="true" type="tns:MetadataTemplate" />
+  <xs:complexType name="MpegProfileSetObject">
+    <xs:sequence>
+      <xs:element name="profiles" nillable="true" type="tns:ArrayOfMpegProfileObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MpegProfileSetObject" nillable="true" type="tns:MpegProfileSetObject" />
+  <xs:complexType name="ArrayOfMpegProfileObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MpegProfileObject" nillable="true" type="tns:MpegProfileObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMpegProfileObject" nillable="true" type="tns:ArrayOfMpegProfileObject" />
+  <xs:complexType name="MpegProfileObject">
+    <xs:sequence>
+      <xs:element name="content" nillable="true" type="xs:string" />
+      <xs:element name="description" nillable="true" type="xs:string" />
+      <xs:element name="name" nillable="true" type="xs:string" />
+      <xs:element name="profileID" type="xs:int" />
+      <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="type" type="q45:MpegProfileType" />
+      <xs:element name="typeName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MpegProfileObject" nillable="true" type="tns:MpegProfileObject" />
+  <xs:complexType name="MpegProfile_TVFormatObjects">
+    <xs:sequence>
+      <xs:element name="profiles" nillable="true" type="tns:ArrayOfMpegProfile_TVFormatObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MpegProfile_TVFormatObjects" nillable="true" type="tns:MpegProfile_TVFormatObjects" />
+  <xs:complexType name="ArrayOfMpegProfile_TVFormatObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MpegProfile_TVFormatObject" nillable="true" type="tns:MpegProfile_TVFormatObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMpegProfile_TVFormatObject" nillable="true" type="tns:ArrayOfMpegProfile_TVFormatObject" />
+  <xs:complexType name="MpegProfile_TVFormatObject">
+    <xs:sequence>
+      <xs:element name="profileID" type="xs:int" />
+      <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="tvFormat" type="q46:TVFORMAT" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MpegProfile_TVFormatObject" nillable="true" type="tns:MpegProfile_TVFormatObject" />
+  <xs:complexType name="PresenterObject">
+    <xs:sequence>
+      <xs:element name="flags" type="xs:int" />
+      <xs:element name="presenterID" type="ser:guid" />
+      <xs:element name="speed" type="xs:int" />
+      <xs:element name="userName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PresenterObject" nillable="true" type="tns:PresenterObject" />
+  <xs:complexType name="PresenterObjects">
+    <xs:sequence>
+      <xs:element name="presenters" nillable="true" type="tns:ArrayOfPresenterObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PresenterObjects" nillable="true" type="tns:PresenterObjects" />
+  <xs:complexType name="ArrayOfPresenterObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PresenterObject" nillable="true" type="tns:PresenterObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPresenterObject" nillable="true" type="tns:ArrayOfPresenterObject" />
+  <xs:complexType name="EditorObject">
+    <xs:sequence>
+      <xs:element name="editorID" type="ser:guid" />
+      <xs:element name="flags" type="xs:int" />
+      <xs:element name="speed" type="xs:int" />
+      <xs:element name="userName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EditorObject" nillable="true" type="tns:EditorObject" />
+  <xs:complexType name="EditorObjects">
+    <xs:sequence>
+      <xs:element name="editors" nillable="true" type="tns:ArrayOfEditorObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EditorObjects" nillable="true" type="tns:EditorObjects" />
+  <xs:complexType name="ArrayOfEditorObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EditorObject" nillable="true" type="tns:EditorObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEditorObject" nillable="true" type="tns:ArrayOfEditorObject" />
+  <xs:complexType name="WorkflowStepObject">
+    <xs:sequence>
+      <xs:element name="bcolor" type="xs:int" />
+      <xs:element name="fcolor" type="xs:int" />
+      <xs:element name="userName" nillable="true" type="xs:string" />
+      <xs:element name="workflowStepID" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WorkflowStepObject" nillable="true" type="tns:WorkflowStepObject" />
+  <xs:complexType name="WorkflowStepObjects">
+    <xs:sequence>
+      <xs:element name="workflowSteps" nillable="true" type="tns:ArrayOfWorkflowStepObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WorkflowStepObjects" nillable="true" type="tns:WorkflowStepObjects" />
+  <xs:complexType name="ArrayOfWorkflowStepObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WorkflowStepObject" nillable="true" type="tns:WorkflowStepObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWorkflowStepObject" nillable="true" type="tns:ArrayOfWorkflowStepObject" />
+  <xs:complexType name="StoryTypeObject">
+    <xs:sequence>
+      <xs:element name="bcolor" type="xs:int" />
+      <xs:element name="fcolor" type="xs:int" />
+      <xs:element name="storyTypeID" type="ser:guid" />
+      <xs:element name="userName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StoryTypeObject" nillable="true" type="tns:StoryTypeObject" />
+  <xs:complexType name="StoryTypeObjects">
+    <xs:sequence>
+      <xs:element name="storyTypes" nillable="true" type="tns:ArrayOfStoryTypeObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StoryTypeObjects" nillable="true" type="tns:StoryTypeObjects" />
+  <xs:complexType name="ArrayOfStoryTypeObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StoryTypeObject" nillable="true" type="tns:StoryTypeObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStoryTypeObject" nillable="true" type="tns:ArrayOfStoryTypeObject" />
+  <xs:complexType name="SlaveDatabaseObjects">
+    <xs:sequence>
+      <xs:element name="databases" nillable="true" type="tns:ArrayOfSlaveDatabaseObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SlaveDatabaseObjects" nillable="true" type="tns:SlaveDatabaseObjects" />
+  <xs:complexType name="ArrayOfSlaveDatabaseObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SlaveDatabaseObject" nillable="true" type="tns:SlaveDatabaseObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSlaveDatabaseObject" nillable="true" type="tns:ArrayOfSlaveDatabaseObject" />
+  <xs:complexType name="SlaveDatabaseObject">
+    <xs:sequence>
+      <xs:element name="dbName" nillable="true" type="xs:string" />
+      <xs:element name="dbServer" nillable="true" type="xs:string" />
+      <xs:element name="dbUser" nillable="true" type="xs:string" />
+      <xs:element name="description" nillable="true" type="xs:string" />
+      <xs:element name="flags" type="xs:int" />
+      <xs:element name="isReadOnly" type="xs:boolean" />
+      <xs:element name="isTrusted" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SlaveDatabaseObject" nillable="true" type="tns:SlaveDatabaseObject" />
+  <xs:complexType name="CommandsChain">
+    <xs:sequence>
+      <xs:element name="_commands" nillable="true" type="tns:ArrayOfBaseCommand" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CommandsChain" nillable="true" type="tns:CommandsChain" />
+  <xs:complexType name="ArrayOfBaseCommand">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BaseCommand" nillable="true" type="tns:BaseCommand" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBaseCommand" nillable="true" type="tns:ArrayOfBaseCommand" />
+  <xs:complexType name="BaseCommand">
+    <xs:sequence>
+      <xs:element name="_commandType" type="tns:CommandType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BaseCommand" nillable="true" type="tns:BaseCommand" />
+  <xs:simpleType name="CommandType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NONE" />
+      <xs:enumeration value="CREATE_NODE" />
+      <xs:enumeration value="DELETE_NODE" />
+      <xs:enumeration value="RESTORE_NODE" />
+      <xs:enumeration value="RENAME_NODE" />
+      <xs:enumeration value="SET_PROPERTY" />
+      <xs:enumeration value="SET_PROPERTIES" />
+      <xs:enumeration value="COPY_NODE" />
+      <xs:enumeration value="MOVE_NODE" />
+      <xs:enumeration value="CREATE_NODE_BY_NODE" />
+      <xs:enumeration value="CREATE_JOB" />
+      <xs:enumeration value="LOCK_NODE" />
+      <xs:enumeration value="UNLOCK_NODE" />
+      <xs:enumeration value="ADD_TAG" />
+      <xs:enumeration value="REMOVE_TAG" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CommandType" nillable="true" type="tns:CommandType" />
+  <xs:complexType name="CreateNodeCommand">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseCommand">
+        <xs:sequence>
+          <xs:element name="_extraData" nillable="true" type="xs:anyType" />
+          <xs:element name="_insertBefore" type="xs:boolean" />
+          <xs:element name="_insertPosition" nillable="true" type="tns:NodeBase" />
+          <xs:element name="_node" nillable="true" type="tns:Node" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CreateNodeCommand" nillable="true" type="tns:CreateNodeCommand" />
+  <xs:complexType name="DeleteNodeCommand">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseCommand">
+        <xs:sequence>
+          <xs:element name="_node" nillable="true" type="tns:NodeBase" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DeleteNodeCommand" nillable="true" type="tns:DeleteNodeCommand" />
+  <xs:complexType name="RestoreNodeCommand">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseCommand">
+        <xs:sequence>
+          <xs:element name="_node" nillable="true" type="tns:NodeBase" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RestoreNodeCommand" nillable="true" type="tns:RestoreNodeCommand" />
+  <xs:complexType name="RenameNodeCommand">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseCommand">
+        <xs:sequence>
+          <xs:element name="_name" nillable="true" type="xs:string" />
+          <xs:element name="_node" nillable="true" type="tns:NodeBase" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RenameNodeCommand" nillable="true" type="tns:RenameNodeCommand" />
+  <xs:complexType name="SetPropertyCommand">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseCommand">
+        <xs:sequence>
+          <xs:element name="_node" nillable="true" type="tns:NodeBase" />
+          <xs:element name="_property" nillable="true" type="tns:PropertyObjectBase" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SetPropertyCommand" nillable="true" type="tns:SetPropertyCommand" />
+  <xs:complexType name="SetPropertiesCommand">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseCommand">
+        <xs:sequence>
+          <xs:element name="_node" nillable="true" type="tns:NodeBase" />
+          <xs:element name="_properties" nillable="true" type="tns:PropertySetObject" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SetPropertiesCommand" nillable="true" type="tns:SetPropertiesCommand" />
+  <xs:complexType name="CopyNodeCommand">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseCommand">
+        <xs:sequence>
+          <xs:element name="_dstParent" nillable="true" type="tns:NodeBase" />
+          <xs:element name="_insertBefore" type="xs:boolean" />
+          <xs:element name="_insertPosition" nillable="true" type="tns:NodeBase" />
+          <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="_newNodeID" nillable="true" type="q47:NODEID" />
+          <xs:element name="_node" nillable="true" type="tns:NodeBase" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CopyNodeCommand" nillable="true" type="tns:CopyNodeCommand" />
+  <xs:complexType name="MoveNodeCommand">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseCommand">
+        <xs:sequence>
+          <xs:element name="_dstParent" nillable="true" type="tns:NodeBase" />
+          <xs:element name="_insertBefore" type="xs:boolean" />
+          <xs:element name="_insertPosition" nillable="true" type="tns:NodeBase" />
+          <xs:element name="_node" nillable="true" type="tns:Node" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MoveNodeCommand" nillable="true" type="tns:MoveNodeCommand" />
+  <xs:complexType name="CreateNodeByNodeCommand">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseCommand">
+        <xs:sequence>
+          <xs:element name="_dstParent" nillable="true" type="tns:NodeBase" />
+          <xs:element name="_insertBefore" type="xs:boolean" />
+          <xs:element name="_insertPosition" nillable="true" type="tns:NodeBase" />
+          <xs:element name="_newNodeSubType" type="xs:int" />
+          <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="_newNodeType" type="q48:NODE_TYPE" />
+          <xs:element name="_node" nillable="true" type="tns:Node" />
+          <xs:element name="_properties" nillable="true" type="tns:PropertySetObject" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CreateNodeByNodeCommand" nillable="true" type="tns:CreateNodeByNodeCommand" />
+  <xs:complexType name="CreateJobCommand">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseCommand">
+        <xs:sequence>
+          <xs:element name="_isCopy" type="xs:boolean" />
+          <xs:element name="_node" nillable="true" type="tns:JobNode" />
+          <xs:element name="_subjectNodes" nillable="true" type="tns:ArrayOfNode" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CreateJobCommand" nillable="true" type="tns:CreateJobCommand" />
+  <xs:complexType name="LockNodeCommand">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseCommand">
+        <xs:sequence>
+          <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="_lockType" type="q49:LockType" />
+          <xs:element name="_node" nillable="true" type="tns:NodeBase" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LockNodeCommand" nillable="true" type="tns:LockNodeCommand" />
+  <xs:complexType name="UnlockNodeCommand">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseCommand">
+        <xs:sequence>
+          <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="_lockType" type="q50:LockType" />
+          <xs:element name="_node" nillable="true" type="tns:NodeBase" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UnlockNodeCommand" nillable="true" type="tns:UnlockNodeCommand" />
+  <xs:complexType name="AddTagCommand">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseCommand">
+        <xs:sequence>
+          <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="_nodeID" type="q51:NODEID" />
+          <xs:element name="_tag" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AddTagCommand" nillable="true" type="tns:AddTagCommand" />
+  <xs:complexType name="RemoveTagCommand">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseCommand">
+        <xs:sequence>
+          <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="_nodeID" type="q52:NODEID" />
+          <xs:element name="_tag" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RemoveTagCommand" nillable="true" type="tns:RemoveTagCommand" />
+  <xs:complexType name="AsyncCommandContext">
+    <xs:sequence>
+      <xs:element name="_id" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AsyncCommandContext" nillable="true" type="tns:AsyncCommandContext" />
+  <xs:complexType name="AsyncCommandResult">
+    <xs:sequence>
+      <xs:element name="commandContext" nillable="true" type="tns:AsyncCommandContext" />
+      <xs:element name="commandResponse" nillable="true" type="xs:anyType" />
+      <xs:element name="commandStatus" type="tns:ASYNC_COMMAND_STATUS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AsyncCommandResult" nillable="true" type="tns:AsyncCommandResult" />
+  <xs:simpleType name="ASYNC_COMMAND_STATUS">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="Wait" />
+      <xs:enumeration value="InProgress" />
+      <xs:enumeration value="Ready" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ASYNC_COMMAND_STATUS" nillable="true" type="tns:ASYNC_COMMAND_STATUS" />
+  <xs:complexType name="ArrayOfAsyncCommandResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AsyncCommandResult" nillable="true" type="tns:AsyncCommandResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAsyncCommandResult" nillable="true" type="tns:ArrayOfAsyncCommandResult" />
+  <xs:complexType name="LogData">
+    <xs:sequence>
+      <xs:element name="_x003C_AppData_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Mode_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_infoText_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LogData" nillable="true" type="tns:LogData" />
+  <xs:complexType name="JobCreationInfoObjects">
+    <xs:sequence>
+      <xs:element xmlns:q53="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="objects" nillable="true" type="q53:ArrayOfKeyValueOfJOB_FOLDER_TYPEJobCreationInfoObject_SRNRwcyb" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="JobCreationInfoObjects" nillable="true" type="tns:JobCreationInfoObjects" />
+  <xs:complexType name="JobCreationInfoObject">
+    <xs:sequence>
+      <xs:element name="PossibleNodesCount" type="xs:int" />
+      <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/CASCommonObjects" name="PossibleNodesTypes" nillable="true" type="q54:ArrayOfNODE_TYPE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="JobCreationInfoObject" nillable="true" type="tns:JobCreationInfoObject" />
+  <xs:complexType name="MediaGroupObjects">
+    <xs:sequence>
+      <xs:element name="mediaGroup" nillable="true" type="tns:ArrayOfMediaGroupObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MediaGroupObjects" nillable="true" type="tns:MediaGroupObjects" />
+  <xs:complexType name="ArrayOfMediaGroupObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MediaGroupObject" nillable="true" type="tns:MediaGroupObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMediaGroupObject" nillable="true" type="tns:ArrayOfMediaGroupObject" />
+  <xs:complexType name="MediaGroupObject">
+    <xs:sequence>
+      <xs:element name="description" nillable="true" type="xs:string" />
+      <xs:element name="flags" type="xs:int" />
+      <xs:element name="mediaGroupId" type="xs:int" />
+      <xs:element name="name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MediaGroupObject" nillable="true" type="tns:MediaGroupObject" />
+  <xs:complexType name="JobProcessorGroupObjects">
+    <xs:sequence>
+      <xs:element name="jobProcessorGroup" nillable="true" type="tns:ArrayOfJobProcessorGroupObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="JobProcessorGroupObjects" nillable="true" type="tns:JobProcessorGroupObjects" />
+  <xs:complexType name="ArrayOfJobProcessorGroupObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="JobProcessorGroupObject" nillable="true" type="tns:JobProcessorGroupObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfJobProcessorGroupObject" nillable="true" type="tns:ArrayOfJobProcessorGroupObject" />
+  <xs:complexType name="JobProcessorGroupObject">
+    <xs:sequence>
+      <xs:element name="jobProcessorGroupId" type="xs:int" />
+      <xs:element name="name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="JobProcessorGroupObject" nillable="true" type="tns:JobProcessorGroupObject" />
+</xs:schema>

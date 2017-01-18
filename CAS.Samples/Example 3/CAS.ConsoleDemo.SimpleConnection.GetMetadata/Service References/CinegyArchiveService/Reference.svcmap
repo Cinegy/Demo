@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a1721f54-804b-4dec-886a-7503b6c41568" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8082/ICinegyDataAccessService/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service1.wsdl" MetadataType="Wsdl" ID="5a27d23d-2538-4149-acae-092eea829542" SourceId="1" SourceUrl="http://localhost:8082/ICinegyDataAccessService/mex" />
+    <MetadataFile FileName="service2.xsd" MetadataType="Schema" ID="5302e28c-2f24-4da6-b3f6-8eceb74c915c" SourceId="1" SourceUrl="http://localhost:8082/ICinegyDataAccessService/mex" />
+    <MetadataFile FileName="service21.xsd" MetadataType="Schema" ID="64e478b9-0b77-4cb4-9348-031752919529" SourceId="1" SourceUrl="http://localhost:8082/ICinegyDataAccessService/mex" />
+    <MetadataFile FileName="CASCommonObjects.xsd" MetadataType="Schema" ID="652cb6c9-dec6-4433-9269-faebbaedecf9" SourceId="1" SourceUrl="http://localhost:8082/ICinegyDataAccessService/mex" />
+    <MetadataFile FileName="CASInternalObjects.xsd" MetadataType="Schema" ID="ed60c6ce-da62-4a2d-88fa-9af96b4357c4" SourceId="1" SourceUrl="http://localhost:8082/ICinegyDataAccessService/mex" />
+    <MetadataFile FileName="CinegyServer1.xsd" MetadataType="Schema" ID="18c65950-5f51-473e-8d99-de2c46171be1" SourceId="1" SourceUrl="http://localhost:8082/ICinegyDataAccessService/mex" />
+    <MetadataFile FileName="MessageContracts.xsd" MetadataType="Schema" ID="46d3aa8b-dfac-4506-8670-90c5a0a0e8bc" SourceId="1" SourceUrl="http://localhost:8082/ICinegyDataAccessService/mex" />
+    <MetadataFile FileName="CinegyCommon1.xsd" MetadataType="Schema" ID="f4ab8113-bfce-46ec-af88-e78e7d642fc7" SourceId="1" SourceUrl="http://localhost:8082/ICinegyDataAccessService/mex" />
+    <MetadataFile FileName="Arrays1.xsd" MetadataType="Schema" ID="917467f3-3bc8-47c1-851b-1eee3165ba4d" SourceId="1" SourceUrl="http://localhost:8082/ICinegyDataAccessService/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

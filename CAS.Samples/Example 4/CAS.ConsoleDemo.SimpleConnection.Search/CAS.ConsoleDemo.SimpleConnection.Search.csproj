@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BE54E639-D9B0-4CC9-9CAD-B7B7564E51BA}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CAS.ConsoleDemo.SimpleConnection.Search</RootNamespace>
+    <AssemblyName>CAS.ConsoleDemo.SimpleConnection.Search</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\CinegyArchiveService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Service References\CinegyArchiveService\CAS.ConsoleDemo.SimpleConnection.Search.CinegyArchiveService.AsyncCommandContext.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CinegyArchiveService\CAS.ConsoleDemo.SimpleConnection.Search.CinegyArchiveService.AsyncCommandResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CinegyArchiveService\CAS.ConsoleDemo.SimpleConnection.Search.CinegyArchiveService.BaseUpdate.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CinegyArchiveService\CAS.ConsoleDemo.SimpleConnection.Search.CinegyArchiveService.ClipNode.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CinegyArchiveService\CAS.ConsoleDemo.SimpleConnection.Search.CinegyArchiveService.ColorParameterObjects.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CinegyArchiveService\CAS.ConsoleDemo.SimpleConnection.Search.CinegyArchiveService.ConnectContext.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CinegyArchiveService\CAS.ConsoleDemo.SimpleConnection.Search.CinegyArchiveService.DescriptorBase.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CinegyArchiveService\CAS.ConsoleDemo.SimpleConnection.Search.CinegyArchiveService.EditorObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CinegyArchiveService\CAS.ConsoleDemo.SimpleConnection.Search.CinegyArchiveService.EditorObjects.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CinegyArchiveService\CAS.ConsoleDemo.SimpleConnection.Search.CinegyArchiveService.GlobalParameterObjects.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CinegyArchiveService\CAS.ConsoleDemo.SimpleConnection.Search.CinegyArchiveService.JobCreationInfoObjects.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CinegyArchiveService\CAS.ConsoleDemo.SimpleConnection.Search.CinegyArchiveService.JobNode.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CinegyArchiveService\CAS.ConsoleDemo.SimpleConnection.Search.CinegyArchiveService.JobProcessorGroupObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CinegyArchiveService\CAS.ConsoleDemo.SimpleConnection.Search.CinegyArchiveService.JobProcessorGroupObjects.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CinegyArchiveService\CAS.ConsoleDemo.SimpleConnection.Search.CinegyArchiveService.LogTemplateObjects.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CinegyArchiveService\CAS.ConsoleDemo.SimpleConnection.Search.CinegyArchiveService.MappingObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CinegyArchiveService\CAS.ConsoleDemo.SimpleConnection.Search.CinegyArchiveService.MappingTypeObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CinegyArchiveService\CAS.ConsoleDemo.SimpleConnection.Search.CinegyArchiveService.MappingTypeObjects.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CinegyArchiveService\CAS.ConsoleDemo.SimpleConnection.Search.CinegyArchiveService.MediaGroupObjects.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CinegyArchiveService\CAS.ConsoleDemo.SimpleConnection.Search.CinegyArchiveService.MetadataSetObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CinegyArchiveService\CAS.ConsoleDemo.SimpleConnection.Search.CinegyArchiveService.MetadataTemplateSetObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CinegyArchiveService\CAS.ConsoleDemo.SimpleConnection.Search.CinegyArchiveService.MogNode.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CinegyArchiveService\CAS.ConsoleDemo.SimpleConnection.Search.CinegyArchiveService.MosObjects.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CinegyArchiveService\CAS.ConsoleDemo.SimpleConnection.Search.CinegyArchiveService.MpegProfileSetObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CinegyArchiveService\CAS.ConsoleDemo.SimpleConnection.Search.CinegyArchiveService.MpegProfile_TVFormatObjects.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CinegyArchiveService\CAS.ConsoleDemo.SimpleConnection.Search.CinegyArchiveService.Node.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CinegyArchiveService\CAS.ConsoleDemo.SimpleConnection.Search.CinegyArchiveService.NodeBase.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CinegyArchiveService\CAS.ConsoleDemo.SimpleConnection.Search.CinegyArchiveService.PresenterObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CinegyArchiveService\CAS.ConsoleDemo.SimpleConnection.Search.CinegyArchiveService.PresenterObjects.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CinegyArchiveService\CAS.ConsoleDemo.SimpleConnection.Search.CinegyArchiveService.Search2Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CinegyArchiveService\CAS.ConsoleDemo.SimpleConnection.Search.CinegyArchiveService.SearchListResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CinegyArchiveService\CAS.ConsoleDemo.SimpleConnection.Search.CinegyArchiveService.SearchResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CinegyArchiveService\CAS.ConsoleDemo.SimpleConnection.Search.CinegyArchiveService.SlaveDatabaseObjects.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CinegyArchiveService\CAS.ConsoleDemo.SimpleConnection.Search.CinegyArchiveService.StoryTypeObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CinegyArchiveService\CAS.ConsoleDemo.SimpleConnection.Search.CinegyArchiveService.StoryTypeObjects.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CinegyArchiveService\CAS.ConsoleDemo.SimpleConnection.Search.CinegyArchiveService.SubTypeObjects.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\CinegyArchiveService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CinegyArchiveService\CAS.ConsoleDemo.SimpleConnection.Search.CinegyArchiveService.TagsCloudObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CinegyArchiveService\CAS.ConsoleDemo.SimpleConnection.Search.CinegyArchiveService.TVFormatObjects.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CinegyArchiveService\CAS.ConsoleDemo.SimpleConnection.Search.CinegyArchiveService.UserActionObjects.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CinegyArchiveService\CAS.ConsoleDemo.SimpleConnection.Search.CinegyArchiveService.WorkflowStepObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CinegyArchiveService\CAS.ConsoleDemo.SimpleConnection.Search.CinegyArchiveService.WorkflowStepObjects.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CinegyArchiveService\CinegyDataAccessService1.wsdl" />
+    <None Include="Service References\CinegyArchiveService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CinegyArchiveService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CinegyArchiveService\ICinegyDataAccessService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CinegyArchiveService\ICinegyDataAccessService51.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CinegyArchiveService\ICinegyDataAccessService52.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CinegyArchiveService\ICinegyDataAccessService53.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CinegyArchiveService\ICinegyDataAccessService54.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CinegyArchiveService\ICinegyDataAccessService55.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CinegyArchiveService\ICinegyDataAccessService56.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CinegyArchiveService\ICinegyDataAccessService57.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CinegyArchiveService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CinegyArchiveService\ICinegyDataAccessService1.disco" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CASInternalObjects" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CASInternalObjects" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="WrapperType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="MTSWrapper" />
+      <xs:enumeration value="MTSWrapper2" />
+      <xs:enumeration value="Reserved3" />
+      <xs:enumeration value="Reserved4" />
+      <xs:enumeration value="Reserved5" />
+      <xs:enumeration value="Reserved6" />
+      <xs:enumeration value="Reserved7" />
+      <xs:enumeration value="Reserved8" />
+      <xs:enumeration value="Reserved9" />
+      <xs:enumeration value="Unknown" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="WrapperType" nillable="true" type="tns:WrapperType" />
+</xs:schema>
