@@ -1,0 +1,351 @@
+<Titler Version="V1.2" Height="1080" CX="16" FrameRate="25" Duration="175" CY="9" TVFormat="5" Name="News" Width="1920" SavedTVFormat="5" TVFormatName="1080i/25">
+	<Public>
+		<RootFolder Path="D:\##TechCon2017\Step1 - TypeControl"/>
+		<Objects>
+			<Font NAME="Arial" PATH="C:/windows/fonts/arialbd.ttf" GUID="GUID" STYLE="Bold"/>
+		</Objects>
+		<Variables>
+			<Text NAME="Category" ID="100560" VALUE="World"/>
+			<Text NAME="News" ID="100563" VALUE="The 'One China' policy explained"/>
+			<Text NAME="RestartTrigger" ID="100612" VALUE=""/>
+		</Variables>
+		<Properties>
+			<Timeline NAME="Main" ID="100016" LeaveLoopAt="0"/>
+		</Properties>
+	</Public>
+	<Private>
+		<Global/>
+		<Tree NEXT_FREE_ID="102019" NAME="Template" Format="5">
+			<Boards NAME="Boards">
+				<ItemBoard NAME="Camera"/>
+				<ItemBoard NAME="Timeline" ID="100015">
+					<Timeline NAME="Main" ID="100016">
+						<Atom NAME="Timeline">
+							<Parameter NAME="LoopStart" ID="100001" VALUE="25"/>
+							<Parameter NAME="LoopEnd" ID="100000" VALUE="150"/>
+						</Atom>
+						<Atom NAME="Background"/>
+						<TimelineEvent NAME="_Text Parameter Visibility" ID="100072">
+							<OutConnection TYPE="Parameter" NR="0" ID="1" INPUTNR="0"/>
+							<KeyFrames/>
+						</TimelineEvent>
+						<TimelineEvent NAME="_Text Parameter Visibility" ID="100270">
+							<OutConnection TYPE="Parameter" NR="0" ID="2" INPUTNR="0"/>
+							<KeyFrames/>
+						</TimelineEvent>
+						<TimelineEvent NAME="_Text Parameter Visibility" ID="100342">
+							<OutConnection TYPE="Parameter" NR="0" ID="3" INPUTNR="0"/>
+							<KeyFrames/>
+						</TimelineEvent>
+						<TimelineEvent NAME="_Text Parameter Visibility" ID="100540">
+							<OutConnection TYPE="Parameter" NR="0" ID="4" INPUTNR="0"/>
+							<KeyFrames/>
+						</TimelineEvent>
+						<TimelineEvent NAME="_Text Parameter Opacity" ID="100566">
+							<OutConnection TYPE="Parameter" NR="0" ID="5" INPUTNR="0"/>
+							<KeyFrames>
+								<KeyFrame Frame="0" Easing="0" Type="Double" Value="0"/>
+								<KeyFrame Frame="6" Easing="0" Type="Double" Value="100"/>
+								<KeyFrame Frame="169" Easing="0" Type="Double" Value="100"/>
+								<KeyFrame Frame="175" Easing="0" Type="Double" Value="0"/>
+							</KeyFrames>
+						</TimelineEvent>
+						<TimelineEvent NAME="_Rectangle Parameter Opacity" ID="100567">
+							<OutConnection TYPE="Parameter" NR="0" ID="6" INPUTNR="0"/>
+							<KeyFrames/>
+						</TimelineEvent>
+						<TimelineEvent NAME="_Text Parameter Opacity" ID="100568">
+							<OutConnection TYPE="Parameter" NR="0" ID="7" INPUTNR="0"/>
+							<KeyFrames>
+								<KeyFrame Frame="0" Easing="0" Type="Double" Value="0"/>
+								<KeyFrame Frame="6" Easing="0" Type="Double" Value="100"/>
+								<KeyFrame Frame="169" Easing="0" Type="Double" Value="100"/>
+								<KeyFrame Frame="175" Easing="0" Type="Double" Value="0"/>
+							</KeyFrames>
+						</TimelineEvent>
+					</Timeline>
+				</ItemBoard>
+				<ItemBoard NAME="Variables" ID="100014">
+					<Event NAME="Category" ID="100560" Value="World">
+						<Atom NAME="Parameter">
+							<Parameter NAME="Export" VALUE="1"/>
+							<Parameter NAME="UpdateMode" ID="100561" VALUE="1"/>
+						</Atom>
+						<OutConnection TYPE="Parameter" NR="0" ID="8" INPUTNR="1"/>
+					</Event>
+					<Event NAME="News" ID="100563" Value="The 'One China' policy explained">
+						<Atom NAME="Parameter">
+							<Parameter NAME="Export" VALUE="1"/>
+							<Parameter NAME="UpdateMode" ID="100564" VALUE="1"/>
+						</Atom>
+						<OutConnection TYPE="Parameter" NR="0" ID="9" INPUTNR="1"/>
+					</Event>
+					<Event NAME="RestartTrigger" ID="100612" Value="">
+						<Atom NAME="Parameter">
+							<Parameter NAME="Export" VALUE="1"/>
+							<Parameter NAME="UpdateMode" ID="100613" VALUE="2"/>
+						</Atom>
+					</Event>
+				</ItemBoard>
+			</Boards>
+			<Object NAME="Template" SUB_TYPE="Group">
+				<Instance NAME="Template" TYPE="Transformation" SUB_TYPE="Transformation">
+					<Atom NAME="Position"/>
+					<Atom NAME="Rotation"/>
+					<Atom NAME="Scale"/>
+					<Atom NAME="Axis"/>
+				</Instance>
+				<Object NAME="Title" ID="100271" SUB_TYPE="Group">
+					<Atom NAME="Parameter"/>
+					<Instance NAME="Title" TYPE="Transformation" SUB_TYPE="Transformation">
+						<Atom NAME="Position">
+							<Parameter NAME="X" ID="100279" VALUE="-3.237823486328125"/>
+							<Parameter NAME="Y" ID="100278" VALUE="64.76763916015625"/>
+						</Atom>
+						<Atom NAME="Rotation"/>
+						<Atom NAME="Scale"/>
+						<Atom NAME="Axis"/>
+					</Instance>
+					<Object NAME="Plate" ID="100018" SUB_TYPE="Rectangle" OBJECT_TYPE="Plate">
+						<Atom NAME="Parameter">
+							<Parameter NAME="Visibility" ID="100048" VALUE="1">
+								<InConnection NAME="Animation" NR="0" TYPE="TimelineEvent" ID="1"/>
+							</Parameter>
+							<Parameter NAME="Opacity" ID="100047" VALUE="100">
+								<InConnection NAME="Animation" NR="0" TYPE="TimelineEvent" ID="6"/>
+							</Parameter>
+						</Atom>
+						<UserData KEY="1" VALUE="Show"/>
+						<Instance NAME="Plate" TYPE="Transformation" SUB_TYPE="Transformation">
+							<Atom NAME="Position">
+								<Parameter NAME="X" ID="100033" VALUE="-546.3762817382813"/>
+								<Parameter NAME="Y" ID="100032" VALUE="-354.565185546875"/>
+							</Atom>
+							<Atom NAME="Rotation"/>
+							<Atom NAME="Scale">
+								<Parameter NAME="X" ID="100034" VALUE="632.9869384765625"/>
+								<Parameter NAME="Y" ID="100029" VALUE="89.13039398193359"/>
+							</Atom>
+							<Atom NAME="Axis"/>
+						</Instance>
+						<Instance NAME="Plate" TYPE="Geometry" SUB_TYPE="Rectangle">
+							<Atom NAME="AnalogClock"/>
+							<Atom NAME="Chamfer"/>
+							<Atom NAME="Blur"/>
+							<Atom NAME="Mask"/>
+							<Atom NAME="Resolution"/>
+						</Instance>
+						<Instance NAME="Plate" TYPE="Color" SUB_TYPE="Color">
+							<Atom NAME="Color">
+								<Parameter NAME="Value" ID="100049" VALUE="FFFF0033"/>
+							</Atom>
+						</Instance>
+						<Instance NAME="Plate" TYPE="Texture" SUB_TYPE="Texture">
+							<Atom NAME="File"/>
+							<Atom NAME="Image"/>
+							<Atom NAME="Parameter"/>
+							<Atom NAME="Info"/>
+						</Instance>
+					</Object>
+					<Object NAME="" ID="100077" SUB_TYPE="Text">
+						<Atom NAME="Parameter">
+							<Parameter NAME="Visibility" ID="100155" VALUE="1" SCRIPT="1">
+								<InConnection NAME="Animation" NR="0" TYPE="TimelineEvent" ID="2"/>
+							</Parameter>
+							<Parameter NAME="Opacity" ID="100154" VALUE="0">
+								<InConnection NAME="Animation" NR="0" TYPE="TimelineEvent" ID="5"/>
+							</Parameter>
+						</Atom>
+						<UserData KEY="1" VALUE="Show"/>
+						<Instance NAME="" TYPE="Transformation" SUB_TYPE="Transformation">
+							<Atom NAME="Position">
+								<Parameter NAME="X" ID="100140" VALUE="-547.1856689453125"/>
+								<Parameter NAME="Y" ID="100139" VALUE="-354.6364135742188"/>
+							</Atom>
+							<Atom NAME="Rotation"/>
+							<Atom NAME="Scale">
+								<Parameter NAME="X" ID="100141" VALUE="631.3681640625"/>
+								<Parameter NAME="Y" ID="100134" VALUE="85.74959564208984"/>
+							</Atom>
+							<Atom NAME="Axis"/>
+						</Instance>
+						<Instance NAME="" TYPE="Geometry" ID="100086" SUB_TYPE="Text">
+							<Atom NAME="TextSizing">
+								<Parameter NAME="MinSize" ID="100094" VALUE="100"/>
+							</Atom>
+							<Atom NAME="Marquee"/>
+							<Atom NAME="Roll"/>
+							<Atom NAME="Clock"/>
+							<Atom NAME="ValueReplacement"/>
+							<Atom NAME="Text">
+								<Parameter NAME="Value" ID="100151" VALUE="World">
+									<InConnection NAME="Variable" NR="1" TYPE="Event" ID="8"/>
+								</Parameter>
+								<Parameter NAME="Resolution" ID="100078" VALUE="80"/>
+							</Atom>
+							<Atom NAME="Font">
+								<Parameter NAME="Family" ID="100076" VALUE="Arial"/>
+								<Parameter NAME="Bold" ID="100135" VALUE="1"/>
+							</Atom>
+							<Atom NAME="Solid"/>
+							<Atom NAME="Shadow">
+								<Parameter NAME="Distance" ID="100156" VALUE="7"/>
+							</Atom>
+							<Atom NAME="ShadowColor"/>
+							<Atom NAME="Border"/>
+							<Atom NAME="BorderColor"/>
+							<Atom NAME="Glow"/>
+							<Atom NAME="GlowColor"/>
+							<Atom NAME="Bevel"/>
+						</Instance>
+						<Instance NAME="" TYPE="Color" SUB_TYPE="Color">
+							<Atom NAME="Color"/>
+						</Instance>
+						<Instance NAME="" TYPE="Effect" SUB_TYPE="TextEffect">
+							<Atom NAME="Animation">
+								<Parameter NAME="OutProgress" ID="100109" VALUE="1"/>
+							</Atom>
+							<Atom NAME="Misc"/>
+							<Atom NAME="TypeWriter"/>
+							<Atom NAME="Alpha">
+								<Parameter NAME="StopAlpha" ID="100104" VALUE="1"/>
+							</Atom>
+							<Atom NAME="Position"/>
+							<Atom NAME="Rotation"/>
+							<Atom NAME="Scale"/>
+							<Atom NAME="Flash">
+								<Parameter NAME="ImageOffsetX" ID="100226" VALUE="-0.15"/>
+								<Parameter NAME="ImageScaleX" ID="100215" VALUE="0.75"/>
+								<Parameter NAME="ImageScaleY" ID="100214" VALUE="4"/>
+								<Parameter NAME="ImageName" ID="100559" VALUE="SuperNova_16.png"/>
+								<Parameter NAME="ImageCount" ID="100558" VALUE="3"/>
+								<Parameter NAME="EffectId" ID="100227" VALUE="1"/>
+							</Atom>
+							<Atom NAME="Arrange"/>
+							<Atom NAME="Counter"/>
+						</Instance>
+					</Object>
+				</Object>
+				<Object NAME="News text" ID="100541" SUB_TYPE="Group">
+					<Atom NAME="Parameter"/>
+					<Instance NAME="News text" TYPE="Transformation" SUB_TYPE="Transformation">
+						<Atom NAME="Position"/>
+						<Atom NAME="Rotation"/>
+						<Atom NAME="Scale"/>
+						<Atom NAME="Axis"/>
+					</Instance>
+					<Object NAME="Plate" ID="100288" SUB_TYPE="Rectangle" OBJECT_TYPE="Plate">
+						<Atom NAME="Parameter">
+							<Parameter NAME="Visibility" ID="100318" VALUE="1">
+								<InConnection NAME="Animation" NR="0" TYPE="TimelineEvent" ID="3"/>
+							</Parameter>
+						</Atom>
+						<UserData KEY="1" VALUE="Show"/>
+						<Instance NAME="Plate" TYPE="Transformation" SUB_TYPE="Transformation">
+							<Atom NAME="Position">
+								<Parameter NAME="X" ID="100303" VALUE="47.76950454711914"/>
+								<Parameter NAME="Y" ID="100302" VALUE="-416.179931640625"/>
+							</Atom>
+							<Atom NAME="Rotation">
+								<Parameter NAME="Z" ID="100305" VALUE="-0.09184032678604126"/>
+							</Atom>
+							<Atom NAME="Scale">
+								<Parameter NAME="X" ID="100304" VALUE="1824.5009765625"/>
+								<Parameter NAME="Y" ID="100299" VALUE="144.1907958984375"/>
+							</Atom>
+							<Atom NAME="Axis"/>
+						</Instance>
+						<Instance NAME="Plate" TYPE="Geometry" SUB_TYPE="Rectangle">
+							<Atom NAME="AnalogClock"/>
+							<Atom NAME="Chamfer"/>
+							<Atom NAME="Blur"/>
+							<Atom NAME="Mask"/>
+							<Atom NAME="Resolution"/>
+						</Instance>
+						<Instance NAME="Plate" TYPE="Color" SUB_TYPE="Color">
+							<Atom NAME="Color"/>
+						</Instance>
+						<Instance NAME="Plate" TYPE="Texture" SUB_TYPE="Texture">
+							<Atom NAME="File"/>
+							<Atom NAME="Image"/>
+							<Atom NAME="Parameter"/>
+							<Atom NAME="Info"/>
+						</Instance>
+					</Object>
+					<Object NAME="" ID="100347" SUB_TYPE="Text">
+						<Atom NAME="Parameter">
+							<Parameter NAME="Visibility" ID="100425" VALUE="1">
+								<InConnection NAME="Animation" NR="0" TYPE="TimelineEvent" ID="4"/>
+							</Parameter>
+							<Parameter NAME="Opacity" ID="100424" VALUE="0">
+								<InConnection NAME="Animation" NR="0" TYPE="TimelineEvent" ID="7"/>
+							</Parameter>
+						</Atom>
+						<UserData KEY="1" VALUE="Show"/>
+						<Instance NAME="" TYPE="Transformation" SUB_TYPE="Transformation">
+							<Atom NAME="Position">
+								<Parameter NAME="X" ID="100410" VALUE="49.376220703125"/>
+								<Parameter NAME="Y" ID="100409" VALUE="-418.5607299804688"/>
+							</Atom>
+							<Atom NAME="Rotation"/>
+							<Atom NAME="Scale">
+								<Parameter NAME="X" ID="100411" VALUE="1798.589599609375"/>
+								<Parameter NAME="Y" ID="100404" VALUE="126.2968292236328"/>
+							</Atom>
+							<Atom NAME="Axis"/>
+						</Instance>
+						<Instance NAME="" TYPE="Geometry" ID="100356" SUB_TYPE="Text">
+							<Atom NAME="TextSizing">
+								<Parameter NAME="MinSize" ID="100364" VALUE="100"/>
+							</Atom>
+							<Atom NAME="Marquee"/>
+							<Atom NAME="Roll"/>
+							<Atom NAME="Clock"/>
+							<Atom NAME="ValueReplacement"/>
+							<Atom NAME="Text">
+								<Parameter NAME="Value" ID="100421" VALUE="The 'One China' policy explained">
+									<InConnection NAME="Variable" NR="1" TYPE="Event" ID="9"/>
+								</Parameter>
+								<Parameter NAME="Resolution" ID="100348" VALUE="60"/>
+							</Atom>
+							<Atom NAME="Font">
+								<Parameter NAME="Family" ID="100346" VALUE="Arial"/>
+								<Parameter NAME="Bold" ID="100405" VALUE="1"/>
+								<Parameter NAME="HorizontalAlignment" ID="100418" VALUE="0"/>
+							</Atom>
+							<Atom NAME="Solid"/>
+							<Atom NAME="Shadow">
+								<Parameter NAME="Distance" ID="100426" VALUE="7"/>
+							</Atom>
+							<Atom NAME="ShadowColor"/>
+							<Atom NAME="Border"/>
+							<Atom NAME="BorderColor"/>
+							<Atom NAME="Glow"/>
+							<Atom NAME="GlowColor"/>
+							<Atom NAME="Bevel"/>
+						</Instance>
+						<Instance NAME="" TYPE="Color" SUB_TYPE="Color">
+							<Atom NAME="Color">
+								<Parameter NAME="Value" ID="100427" VALUE="FF000000"/>
+							</Atom>
+						</Instance>
+						<Instance NAME="" TYPE="Effect" SUB_TYPE="TextEffect">
+							<Atom NAME="Animation"/>
+							<Atom NAME="Misc"/>
+							<Atom NAME="TypeWriter"/>
+							<Atom NAME="Alpha"/>
+							<Atom NAME="Position"/>
+							<Atom NAME="Rotation"/>
+							<Atom NAME="Scale"/>
+							<Atom NAME="Flash">
+								<Parameter NAME="ImageCount" VALUE="2"/>
+							</Atom>
+							<Atom NAME="Arrange"/>
+							<Atom NAME="Counter"/>
+						</Instance>
+					</Object>
+				</Object>
+			</Object>
+		</Tree>
+	</Private>
+</Titler>

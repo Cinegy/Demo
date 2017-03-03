@@ -1,0 +1,6 @@
+<rssfeeds>
+	<feed name="World" url="http://rss.cnn.com/rss/edition_world.rss"/>
+	<feed name="U.S." url="http://rss.cnn.com/rss/edition_us.rss"/>
+	<feed name="Travel" url="http://rss.cnn.com/rss/edition_travel.rss"/>
+	<feed name="Video" url="http://rss.cnn.com/rss/cnn_freevideo.rss"/>
+</rssfeeds>
