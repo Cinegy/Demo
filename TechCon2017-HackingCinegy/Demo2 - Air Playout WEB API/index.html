@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Cinegy Air WEB API #Desktop</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="assets/normalize.css">
+	<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+	<header>
+		<div class="logo">
+			<img src="img/cinegy-logo.png" alt="">
+			<span>Air</span>
+		</div>
+	</header>
+	<div class="bgfon"></div>
+	<div class="main-wrap">
+		<div class="left-wrap">
+			<div class="vertical"></div>
+			<div id="step2" class="step2">
+				<div id="onAir" class="off-air">ON AIR</div>
+				<ul>
+					<li class="active">Active: <span id="active"> </span></li>
+					<li class="cued">Cued: <span id="cued"></span></li>
+					<li class="license">License: <span id="license"></span></li>
+					<li class="output">Output: <span id="output"></span></li>
+				</ul>
+			</div>
+			<div id="step1" class="step1">
+				<section>
+					<div id="normal" data-command="Normal" class="lined thin">
+						Normal
+						<span><i></i></span>
+					</div>
+					<div id="bypass" data-command="Bypass" class="lined thin">
+						Bypass
+						<span><i></i></span>
+					</div>
+					<div id="black" data-command="Black" class="lined thin">
+						Black
+						<span><i></i></span>
+					</div>
+					<div id="clear" data-command="Clean" class="lined thin">
+						Clean
+						<span><i></i></span>
+					</div>
+					<div id="Start" data-command="Start" class="lined thin">
+						Start Cued
+						<span><i></i></span>
+					</div>
+				</section>
+			</div>
+		</div>
+		<div id="step3" class="step3">
+			<div class="list-wrap">
+				<div id="list">
+					<div>
+						<span>Scheduled At</span>
+						<span>Triggers</span>
+						<span>Name</span>
+						<span>Description</span>
+						<span>Duration</span>
+					</div>
+				</div>
+			</div>
+			<div class="control-panel">
+				<div class="wrapp">
+					<span class="onoff">
+						<img src="img/onoff.png" alt="">
+					</span>
+					<ul>
+						<li data-like=""><span class="red off">CONN</span><i></i></li>
+						<li data-like="clear"><span class="on">CG OFF</span><i></i></li>
+						<li data-like=""><span class="on">BYPASS</span><i></i></li>
+						<li data-like=""><span class="on">BLACK</span><i></i></li>
+						<li data-like=""><span class="transp">F/OVR</span><i></i></li>
+					</ul>
+					<div class=""></div>
+				</div>
+			</div>
+		</div>
+		<div id="step4" class="step4"></div>
+		<ul id="pagination" class="pagination">
+			<li class="check" data-ident="1"><span>1</span></li>
+			<li data-ident="2" onclick="getStatus(event)"><span>2</span></li>
+			<li data-ident="3" onclick="getList(event)"><span>3</span></li>
+		</ul>
+	</div>
+	<footer><p><i></i>Cinegy GmbH</p></footer>
+
+	<script src="assets/jquery-3.1.1.min.js"></script>
+	<script src="assets/xml2json.min.js"></script>
+
+	<script src="assets/comm.js"></script>
+	<script src="assets/main.js"></script>
+</body>
+</html>

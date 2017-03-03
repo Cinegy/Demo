@@ -1,0 +1,441 @@
+
+/* -- fonts -- */
+
+@font-face {
+    font-family: 'OswaldL';
+    src: url(../font/Oswald-Light.ttf);
+}
+@font-face {
+    font-family: 'OswaldR';
+    src: url(../font/Oswald-Regular.ttf);
+}
+
+/* -- style -- */
+
+* {
+	margin: 0; padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+html,
+body {
+	width: 100%; height: 100%;
+	margin: 0; padding: 0;
+	position: relative;
+	overflow: hidden;
+}
+header {
+	width: 100%; height: 40px;
+	background: #30485e;
+	position: absolute;
+	top: 0; left: 0;
+	pointer-events: none;
+	box-shadow: 0px 3px 40px -7px #000; 
+	border-bottom: 1px solid #555;
+	z-index: 1;
+}
+header .logo {
+	display: inline-block;
+	width: auto; height: 100%;
+	margin-left: 25px; 
+}
+header .logo img {
+	display: inline-block;
+	width: auto; height: 100%;
+	padding: 4px; 
+}
+header .logo span {
+	display: inline-block;
+	height: 100%; width: auto;
+	padding: 15px 0px; 
+	color: #fff;
+	vertical-align: top;
+	font-family: 'OswaldL';
+	letter-spacing: 1px;
+	font-size: 20px;
+}
+footer {
+	width: 100%; height: 25px;
+	position: absolute;
+	bottom: 0; left: 0;
+	background: #30485e;
+	pointer-events: none;
+	z-index: 1;
+	box-shadow: 0px -1px 50px -7px #000; 
+}
+footer p {
+	display: inline-block;
+	padding: 0px 20px;
+	font-family: 'OswaldL';
+	letter-spacing: 2px;
+	color: #fff;
+	font-size: 12px;
+	line-height: 25px;
+}
+.bgfon {
+	width: 100%; height: 100%;
+	background-image: url(../img/home-bg.jpg);
+	background-size: 100% 100%;
+	position: absolute;
+
+}
+.left-wrap {
+	width: 100%; height: 100%;
+	position: absolute;
+	top: 0; left: 0;
+	overflow: hidden;
+}
+.vertical {
+	width: 3px; height: 3px;
+	position: absolute;
+	display: block;
+	background: rgba(255,255,255,0.4);
+	top: 50%; right: 0px;
+	-webkit-transform: translate(0,-50%);
+	-moz-transform: translate(0,-50%);
+	-ms-transform: translate(0,-50%);
+	-o-transform: translate(0,-50%);
+	transform: translate(0,-50%);
+}
+.main-wrap {
+	width: 100%; height: 100%;
+	position: relative;
+	padding: 50px 15px 35px 15px;
+}
+.main-wrap .step1 {
+	display: block;
+	width: 100%;
+	position: absolute;
+	top: 150%; left: 50%;
+	text-align: center;
+	-webkit-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+}
+.main-wrap .step1 section > div {
+	position: relative;
+	display: inline-block;
+	margin: 1px 20px;
+	color: #fff;
+	font-size: 25px;
+	letter-spacing: 1px;
+	font-family: 'OswaldR';
+}
+.main-wrap .step1 section > div:hover {
+	cursor: pointer;
+    box-shadow: 2px 8px 4px -3px rgba(255, 255, 255, 0.3);
+}
+.main-wrap .step1 section > div.check {
+	text-decoration: underline; 
+}
+.main-wrap .step1 section > div > span {
+	border-radius: 5px;
+	width: 80px; height: 80px;
+	position: absolute;
+	top: -100px; left: 50%;
+	background: #ed2424;
+	box-shadow: 2px 2px 3px -1px #000;
+	transform: translate(-50%, 0);
+}
+.main-wrap .step1 section > div > span i {
+	display: block;
+	width: 80px; height: 80px;
+	background: #fff;
+	margin: 0 auto;
+	background: url(../img/controll_sprite.png) top left no-repeat;
+	background-size: auto 80px;
+}
+.main-wrap .step1 section > div:nth-child(1) > span {
+	background: #338033;
+}
+.main-wrap .step1 section > div:nth-child(5) > span {
+	background: #e5e5b2
+}
+.main-wrap .step1 section > div:nth-child(1) > span i {
+	display: block;
+	width: 30px; height: 30px;
+	background: #000;
+	margin: 25px;
+}
+.left-wrap section div:nth-child(1) span i:after {
+	content: '';
+	display: block;
+	width: 18px; height: 18px;
+	background: #000;
+	border-radius: 100%;
+	position: absolute;
+	top: 50%; left: 50%;
+
+	-webkit-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+}
+.left-wrap section div:nth-child(2) span i { background-position: -157px; }
+.left-wrap section div:nth-child(3) span i { background-position: -236px; }
+.left-wrap section div:nth-child(4) span i { background-position: -78px; }
+.left-wrap section div:nth-child(5) span i { background-position: -500px; }
+.left-wrap section div:nth-child(5) span i:after {
+	content: '';
+	display: block;
+	width: 0; height: 0;
+    border-top: 10px solid transparent;
+    border-left: 15px solid black;
+    border-bottom: 10px solid transparent;
+    border-radius: 0;
+    background: transparent;
+   	position: absolute;
+	top: 50%; left: 53%;
+
+	-webkit-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+} 
+.pagination {
+	width: auto; height: 50px;
+	position: absolute;
+	bottom: 50px; left: 50px;
+}
+.pagination li {
+	width: 50px; height: 50px;
+	display: inline-block;
+	margin-right: 25px;
+	border: 3px solid rgba(255,255,255,0.4);
+	border-radius: 50px;
+}
+.pagination li:hover {
+	cursor: pointer;
+}
+.pagination li span {
+	width: 100%; height: 100%;
+	display: inline-block;
+	border-radius: 100%;
+	line-height: 43px;
+	text-align: center;
+	font-family: 'OswaldL';
+	font-size: 25px;
+	color: #fff;
+	transition: 1s;
+}
+.pagination li.check {
+	border: 3px solid rgba(255,255,255,1);
+}
+.pagination li.check span {
+	box-shadow: inset 0px 0px 30px -3px rgba(255,255,255,0.4);
+}
+.main-wrap .step2 {
+	width: 100%; height: 50%;
+	border-bottom: 3px solid rgba(255,255,255,1);
+	position: absolute;
+	top: 50%; left: 0%;
+
+}
+.main-wrap .step2 #onAir {
+	width: 120px; height: 45px;
+	background: rgba(0,0,0,0.9);
+	box-shadow: 2px 2px 5px -1px #000;
+	color: red;
+	line-height: 42px;
+	font-family: 'OswaldR';
+	font-size: 30px;
+	text-align: center;
+	position: relative;
+	left: 50%; bottom: 250px;
+	text-shadow: 1px 1px #000;
+	-webkit-transform: translate(-50%, 0);
+	-moz-transform: translate(-50%, 0);
+	-ms-transform: translate(-50%, 0);
+	-o-transform: translate(-50%, 0);
+	transform: translate(-50%, 0);
+}
+.main-wrap .step2 #onAir.on-air { color: green; } 
+.main-wrap .step2 #onAir.off-air { color: red; }
+.main-wrap .step2 ul {
+	display: block;
+	width: auto; height: 200px;
+	margin: 0 auto; 
+	text-align: center; 
+	margin-bottom: 100px;
+}
+.main-wrap .step2 ul li {
+	width: auto; height: 50px;
+	line-height: 50px;
+	position: relative;
+	bottom: 200px;
+	font-family: 'OswaldR';
+	font-size: 25px;
+	color: #fff;
+	opacity: 1;
+	letter-spacing: 1px;
+}
+.step3 {
+	position: absolute;
+	width: 0; height: 100%;
+	top: 0; right: 0;
+}
+.step3 .list-wrap {
+	width: 90%; height: auto; max-height: 80%;
+	margin: 10% 5%; 
+}
+.step3 .list-wrap #list {
+	width: 100%; height: auto;
+	border: 2px solid rgba(0,0,0,0.8);
+	box-shadow: 3px 3px 10px -3px #000;
+}
+.step3 .list-wrap #list div.active-item {
+	background: rgb(222, 123, 123);
+}
+.step3 .list-wrap #list div.cued-item {
+	background: #eee590;
+}
+.step3 .list-wrap #list div {
+	width: 100%;
+	height: 30px;
+	font-size: 0;
+	white-space: nowrap;
+	background: #bbdec2;
+}
+.step3 .list-wrap #list div#candidate {
+	background: #fff;
+}
+.step3 .list-wrap #list div span {
+	overflow: hidden;
+	display: inline-block;
+	position: relative;
+	height: 100%;
+	line-height: 30px;
+	font-size: 14px;
+	border: 1px solid #000;
+	text-align: center;
+	color: #000;
+	pointer-events: none;
+}
+.step3 .list-wrap #list div:first-child {
+    box-shadow: 1px 1px 5px -1px #000;
+}
+.step3 .list-wrap #list div:first-child span {
+	color: #fff !important;
+	background: #30485e !important;
+}
+.step3 .list-wrap #list div span:nth-child(1) { width: 15%; }
+.step3 .list-wrap #list div span:nth-child(2) { width: 10%; }
+.step3 .list-wrap #list div span:nth-child(3) { width: 25%; }
+.step3 .list-wrap #list div span:nth-child(4) { width: 25%; }
+.step3 .list-wrap #list div span:nth-child(5) { width: 25%; }
+.step3 .list-wrap #list div span i {
+	width: 30px; height: 30px;
+	display: block;
+	margin: 0 auto;
+}
+.step3 .list-wrap #list div.loop-start span:nth-child(2) i {
+	background: url(../img/loop_sprite.png);
+	background-size: 90px auto;
+	background-position: 0 0; 
+}
+.step3 .list-wrap #list div.loop span:nth-child(2) i {
+	background: url(../img/loop_sprite.png);
+	background-size: 90px auto;
+	background-position: -30px 0;
+}
+.step3 .list-wrap #list div.loop-end span:nth-child(2) i {
+	background: url(../img/loop_sprite.png);
+	background-size: 90px auto;
+	background-position: -60px 0;
+}
+.step3 .list-wrap #list div:hover {
+	background: #fff;
+	color: #30485e;
+	font-weight: 600;
+	cursor: pointer;
+}
+.control-panel .wrapp {
+	width: 375px; height: 130px;
+	border: 2px solid #ccc;
+	padding: 0 10px;
+	position: relative;
+	margin: 0 auto;
+}
+.control-panel .wrapp ul{
+	width: 100%; height: 100%;
+	font-size: 0;
+}
+.control-panel .wrapp ul li {
+	display: inline-block;
+	width: 20%; height: 100%;
+	cursor: pointer;
+}
+.control-panel .wrapp ul li span {
+	display: block;
+	width: 100%; height: 22px;
+	margin: 25px 0 0px 0;
+	background: #000;
+	font-weight: 600;
+	color: #fff;
+	font-size: 14px; 
+	text-align: center;
+	line-height: 22px;
+}
+.control-panel .wrapp ul li span.transp {
+	background: transparent;
+}
+.control-panel .wrapp ul li i { 
+	display: block;
+	width: 50px; height: 50px;
+	background: url(../img/controll_sprite.png);
+	margin: 15px 11px;
+	background-size: 250px;
+}
+.control-panel .wrapp ul li:nth-child(1) i { background-position: 0 0; }
+.control-panel .wrapp ul li:nth-child(2) i { background-position: -50px 0; }
+.control-panel .wrapp ul li:nth-child(3) i { background-position: -100px 0; }
+.control-panel .wrapp ul li:nth-child(4) i { background-position: -150px 0; }
+.control-panel .wrapp ul li:nth-child(5) i { background-position: -200px 0; }
+.control-panel .wrapp ul li i:hover {
+	box-shadow: 2px 2px 6px -1px #fff;
+}
+.control-panel .wrapp ul li span.off,
+.control-panel .wrapp ul li span.off.on { color: red; }
+.control-panel .wrapp ul li span.on { color: green; }
+.control-panel .wrapp ul li span.checked { color: green; }
+.control-panel .wrapp ul li span.red { color: red !important; }
+.control-panel .wrapp ul li:nth-child(5) span { color: #fff; }
+.control-panel .wrapp span.onoff {
+	width: 75px; height: auto;
+	display: inline-block;
+	position: absolute;
+	top: -12px; left: 50%;
+	background: #fff; 
+	-webkit-transform: translate(-50%, 0);
+	-moz-transform: translate(-50%, 0);
+	-ms-transform: translate(-50%, 0);
+	-o-transform: translate(-50%, 0);
+	transform: translate(-50%, 0);
+	border: 2px solid #ccc;
+	border-radius: 2px;
+	z-index: 5;
+	cursor: pointer;
+}
+.control-panel .wrapp span.onoff img {
+	width: 100%; height: auto;
+	display: block;
+}
+.control-panel .wrapp > div {
+	width: 100%; height: 100%;
+	background: rgba(0,0,0,0.5);
+	z-index: 3;
+	position: absolute;
+	bottom: 0px; left: 0;
+}
+.control-panel .wrapp > div.fade-control {
+	background: rgba(0,0,0,0);
+	pointer-events: none;
+}
+
