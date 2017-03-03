@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Cinegy Air WEB API #Mobile</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="assets/normalize.css">
+	<link rel="stylesheet" href="assets/style_m.css">
+</head>
+<body>
+	<header>
+		<div class="logo">
+			<img src="img/cinegy-logo.png" alt="">
+			<span>Air</span>
+		</div>
+		<div id="onAir" class="off-air">ON AIR</div>
+	</header>
+	<div class="main-wrap">
+		<div class="left-wrap">
+			<div class="vertical"></div>
+			<div id="step1" class="step1">
+				<section>
+					<div id="normal" data-command="Normal" class="on">
+						Normal
+						<span><i></i></span>
+					</div>
+					<div id="bypass" data-command="Bypass" class="off">
+						Bypass
+						<span><i></i></span>
+					</div>
+					<div id="black" data-command="Black" class="off">
+						Black
+						<span><i></i></span>
+					</div>
+					<div id="clear" data-command="Clean" class="off">
+						Clean
+						<span><i></i></span>
+					</div>
+					<div id="Start" data-command="Start" class="">
+						Start
+						<span><i></i></span>
+					</div>
+				</section>
+			</div>
+		</div>
+		<div id="step3" class="step3">
+			<div class="list-wrap">
+				<div>
+					<span>Name</span>
+					<span>Loop</span>
+					<span>Duration</span>
+					<span>Scheduled At</span>
+				</div>
+				<div id="list">
+					
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<footer><p><i></i>Cinegy GmbH</p></footer>
+	<script src="assets/jquery-3.1.1.min.js"></script>
+	<script src="assets/xml2json.min.js"></script>
+
+	<script src="assets/comm.js"></script>
+	<script src="assets/main.js"></script>
+</body>
+</html>
