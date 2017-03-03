@@ -5,6 +5,10 @@ Any code used in tutorials, demos or training that we want to make available
 
 The first demo content posted, from the Hacking Cinegy TechCon 2016 demo - take a look to see how Michael managed to build a working scoreboard with Cinegy Type, a banana and an orange (banana and orange not included in GitHub).
 
+##TechCon 2017
+
+The content from the Hacking Cinegy TechCon 2017 demo - take a look to see how Alex managed to update Cinegy Type with data from Excel/RSS, controlled Air Playout from mobile phone and automatically uploaded video to Facebook from Cinegy Convert.
+
 ##Type RSS Controller
 
 This is a simple example application, which shows how to take an RSS feed and use it as a source to drive on-air branding.
