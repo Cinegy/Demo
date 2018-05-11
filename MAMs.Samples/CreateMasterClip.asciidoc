@@ -1,0 +1,83 @@
+== Media Asset Management 11 beta service: API sample
+
+The following API sample allows you creating clips in Cinegy Archive database. 
+
+[source,powershell]
+
+----
+$mamsHost = "http://localhost:7601/mams/1.0/api/mam/"
+$authUri = $mamsHost + "authentication"
+
+$user = "domain/user"
+$password = "password"
+$encodedCreds = [System.Convert]::ToBase64String([System.Text.Encoding]::ASCII.GetBytes($user + ":" + $password))
+$basicAuthValue = "Basic $encodedCreds"
+
+$connectionSettings = @{
+  CASEndpoint = "http://localhost:8082/ICinegyDataAccessService";
+  Database = "10";
+  Server = ".\sqlexpress";
+  Product = "Test";
+    ProductLicense = "{########-####-####-####-############}";
+  ProductVersion = "1.0";
+} | ConvertTo-Json
+
+$Headers = @{
+    Authorization = $basicAuthValue;
+    Accept = "application/json";
+}
+
+#Get bearer token
+$authResult = Invoke-WebRequest -Uri $authUri -Headers $Headers -ContentType "application/json" -Body $connectionSettings  -Method Post -UseBasicParsing | ConvertFrom-Json
+$bearerToken = "Bearer " + $authResult.access_token
+
+$folderId = "5c731347-6360-489e-87ef-598b83ea96aa" # Default master clip folder
+$placeholderUri = $mamsHost + "roll?parentId=" + $folderId
+
+$Headers["Authorization"] = $bearerToken
+
+$placeholderSettings = @{
+  VideoFormatId = 2; #possible video formats can be requested here: http://localhost:7601/mams/1.0/api/mam/management/videoformat/list
+  Name = "Test 1";
+}| ConvertTo-Json
+
+#Create roll
+$roll = Invoke-WebRequest -Uri $placeholderUri -Headers $Headers -ContentType "application/json" -Body $placeholderSettings  -Method Put -UseBasicParsing | ConvertFrom-Json
+
+Write-Host "Roll with id " $roll.id "has been created!"
+
+
+$masterClipSettings = @{
+  TapeIn = 0;
+  TapeOut = 187033131;
+  OriginalTapeIn = 0;
+  MediaGroupId = 1; #possible media groups can be requested here: http://localhost:7601/mams/1.0/api/mam/descriptor?id=4e03a19d-5311-466c-bddb-8cd344fd3dee
+  VideoFormatId = 2; #possible video formats can be requested here: http://localhost:7601/mams/1.0/api/mam/management/videoformat/list
+  Name = "Test 1";
+  FileSet = @{
+    Files = @(
+    @{ 
+        Name = "medium_video.m2v"; 
+        Quality = "High";#High/Medium/Low
+        Type = "Video";#Video/Audio
+        Offset = 0;
+        Track = 0;    
+    },
+    @{ 
+        Name = "medium_audio.wav"; 
+        Quality = "High";
+        Type = "Audio";
+        Offset = 0;
+        Track = 1;
+    }
+  )
+  }
+  
+}| ConvertTo-Json -Depth 100
+$masterClipUri = $mamsHost + "masterclip?parentId=" + $roll.id
+
+#Create masterClip
+$masterClip = Invoke-WebRequest -Uri $masterClipUri -Headers $Headers -ContentType "application/json" -Body $masterClipSettings  -Method Put -UseBasicParsing | ConvertFrom-Json
+
+Write-Host "MasterClip with id " $masterClip.id "has been created!"
+----
