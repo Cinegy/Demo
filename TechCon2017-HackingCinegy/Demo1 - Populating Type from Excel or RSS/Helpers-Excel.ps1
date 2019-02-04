@@ -11,7 +11,7 @@ function Excel-ImportData([string]$FilePath, [string]$SheetName = "")
     if (Test-Path -path $csvFile) { Remove-Item -path $csvFile }
  
     # convert Excel file to CSV file
-    $xlCSVType = 6 # SEE: http://msdn.microsoft.com/en-us/library/bb241279.aspx
+    $xlCSVType = 62 # better unicode support xlCSVUTF8 
     $excelObject = New-Object -ComObject Excel.Application  
     $excelObject.Visible = $false 
     $workbookObject = $excelObject.Workbooks.Open($FilePath)
